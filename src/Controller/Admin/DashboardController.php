@@ -12,6 +12,7 @@ use App\Entity\Project;
 use App\Entity\User;
 use App\Entity\Client;
 use App\Entity\Category;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -20,21 +21,22 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        return parent::index();
+        $routeBuilder = $this->get(AdminUrlGenerator::class);
+        return $this->redirect($routeBuilder->setController(ProjectCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Dsides V2');
+            ->setTitle('dsides');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Projects', 'fas fa-list', Project::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
+        yield MenuItem::linkToCrud('Projets', 'fas fa-list', Project::class);
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-list', Client::class);
-        yield MenuItem::linkToCrud('Users', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Équipe', 'fas fa-list', User::class);
     }
 }
