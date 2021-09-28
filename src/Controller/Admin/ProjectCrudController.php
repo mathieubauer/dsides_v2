@@ -35,7 +35,7 @@ class ProjectCrudController extends AbstractCrudController
             TextField::new('slug'),
             AssociationField::new('client')->setFormTypeOptions(['choice_label' => 'name']),
             AssociationField::new('category')->setFormTypeOptions(['choice_label' => 'name']),
-            NumberField::new('displayOrder')->hideOnIndex(),
+            NumberField::new('displayOrder'),
             BooleanField::new('isDisplayed'),
         ];
     }

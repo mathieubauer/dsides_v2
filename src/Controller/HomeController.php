@@ -14,7 +14,10 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
+        $projects = $this->getDoctrine()->getRepository(Project::class)->findBy(
+            [],
+            ['displayOrder' => 'ASC']
+        );
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
