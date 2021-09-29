@@ -10,10 +10,8 @@
     <title>{% block title %}dsides{% endblock %}</title>
 
     {% block stylesheets %}
-    <link rel="apple-touch-icon" type="image/x-icon" href="images/icone03.jpg" />
-    <link rel="apple-touch-icon" type="image/x-icon" href="images/icone03.jpg" />
-    <link rel="icon" type="image/png" href="images/icone03.jpg">
     <link href="http://fonts.cdnfonts.com/css/joanna-sans-nova" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('/img/favicon_light.jpg') }}" />
     {{ encore_entry_link_tags('app') }}
     {% endblock %}
 

@@ -1,0 +1,21 @@
+// https://ishadeed.com/article/handling-text-over-image-css/
+
+.cover_300 {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.scrim {
+    position: absolute;
+    /* other styles (left, top, right, and padding) */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+}
+
+.text_shadow { 
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
