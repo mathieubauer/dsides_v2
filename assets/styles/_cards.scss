@@ -1,5 +1,11 @@
 // https://ishadeed.com/article/handling-text-over-image-css/
 
+.cover_200 {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
 .cover_300 {
     height: 300px;
     width: 100%;
@@ -8,11 +14,6 @@
 }
 
 .scrim {
-    position: absolute;
-    /* other styles (left, top, right, and padding) */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 }
 
