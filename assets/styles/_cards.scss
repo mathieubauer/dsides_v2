@@ -13,6 +13,13 @@
     object-position: center center;
 }
 
+.cover_400 {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
 .scrim {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
 }

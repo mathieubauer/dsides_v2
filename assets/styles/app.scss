@@ -1,5 +1,8 @@
+@import "_colors";
+
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
 @import "_fonts";
 @import "_cards";
+@import "_buttons";

@@ -1,0 +1,70 @@
+.btn {
+    border-radius: 999px;
+    padding: .375rem 1.25rem;
+}
+
+.button_fixed {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+    z-index: 99;
+    min-width: 70px;
+    min-height: 70px;
+    padding: 16px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+    transition: all 500ms ease;
+}
+
+.btn_rounded {
+    -webkit-border-radius: 999px;
+    border-radius: 999px;
+    padding: .5rem 1.5rem;
+}
+
+
+/* Démo mdboostrap | dans formulaire de connexion admin ampli */
+
+.btn.blue-gradient:active, .btn.blue-gradient:focus, .btn.blue-gradient:hover { /* Généralisable à tous les boutons */
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    outline: 0;
+}
+
+.btn.blue-gradient {
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
+    color: #fff;
+    border: 0;
+}
+
+.blue-gradient {
+    background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: -o-linear-gradient(50deg,#45cafc,#303f9f)!important;
+    background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+}
+
+.btn.blue-gradient:active, .btn.blue-gradient:active:focus .btn.blue-gradient.active, .btn.blue-gradient:focus, .btn.blue-gradient:hover {
+    background: -webkit-gradient(linear,left top,left bottom,from(#5ed1fc),to(#3647b3));
+    background: -webkit-linear-gradient(#5ed1fc,#3647b3);
+    background: -o-linear-gradient(#5ed1fc,#3647b3);
+    background: linear-gradient(#5ed1fc,#3647b3);
+}
+
+input.btn.blue-gradient:hover {
+    color: white;
+}
+
+.btn_material {
+    font-size: .875rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    color: $ampli-color;
+}
+
+.no_style, .hidden_link, .hidden_link:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
