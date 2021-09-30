@@ -21,9 +21,5 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "heroku-postbuild": "encore production --progress"
-    },
-    "engines": {
-        "node": "14.14.0",
-        "npm" : "6.x"
     }
 }
