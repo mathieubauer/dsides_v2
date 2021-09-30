@@ -1,0 +1,77 @@
+<div class="position-relative">
+
+    <div class="scrim cover_200 position-absolute bottom-0 start-50 translate-middle-x"></div>
+
+    <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter(filter) }}" class="{{ cover }}"
+        alt="{{ project.name }}">
+
+    <div class="position-absolute bottom-0 start-0 p-4 w-100">
+        <div class="text-white text_shadow">
+            <h2>{{ project.name }}</h2>
+            <h3>{{ project.client.name }}</h3>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            {% for category in project.category %}
+            <div class="badge bg-white text_color_87 rounded-pill mx-1">{{ category.name }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <a data-bs-toggle="modal" data-bs-target="#modal_{{ project.id }}">
+        <div class="{{ cover }} position-absolute bottom-0 start-50 translate-middle-x"></div>
+    </a>
+
+    {#
+    {% if project.slug %}
+    <a href="{{ path('project_show_slug', {'slug': project.slug }) }}">
+        <div class="cover_300 position-absolute bottom-0 start-50 translate-middle-x"></div>
+    </a>
+    {% else %}
+    <a href="{{ path('project_show', {'id': project.id }) }}">
+        <div class="cover_300 position-absolute bottom-0 start-50 translate-middle-x"></div>
+    </a>
+    {% endif %}
+    #}
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal_{{ project.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+
+            <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('w1600') }}" class="cover_300"
+                alt="{{ project.name }}">
+
+
+            <div class="modal-body">
+                <div class="mx-auto" style="width: 800px;">
+                    <h1>{{ project.name }}</h1>
+                    <h3> {{ project.client.name }}</h3>
+
+                    {{ project.content|raw }}
+
+                    <div class="mt-3">
+                        {% for category in project.category %}
+                        <span class="badge bg-secondary rounded-pill">{{ category.name }}</span>
+                        {% endfor %}
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="button" class="btn btn_material hidden_link px-0" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-chevron-left me-2"></i>
+                            <span>Retour</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+        </div>
+    </div>
+</div>
