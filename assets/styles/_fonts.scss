@@ -1,3 +1,4 @@
+$font_titles: 'JoannaNova', serif;
 $font_main: 'Joanna Sans Nova', sans-serif;
 
 body {
@@ -5,11 +6,16 @@ body {
 }
 
 h1, h2, h3, h4 {
+    font-family: $font_titles;
     font-weight: 600;
 }
 
 strong {
-    font-weight: 600;
+    font-weight: 700;
+}
+
+.badge {
+    font-family: $font_titles;
 }
 
 h1 { font-size: 2rem; } /*  32px */
@@ -83,6 +89,7 @@ h3 { font-size: 1.25rem; } /*  20px */
 }
 
 .fw_600 {
+    // attention : Joanna Nova Sans n'existe pas en 600
     font-weight: 600;
 }
 
