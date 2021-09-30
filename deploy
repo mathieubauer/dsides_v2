@@ -1,4 +1,4 @@
 #!/bin/sh
 # npm run build
 rsync -av ./ kb240_learn@makelearn.fr:~/sites/preprod-dsides.makelearn.fr --include=public/.htaccess --include=public/build --exclude-from=.gitignore
-# ssh kb240_learn@makelearn.fr 'cd ~/learn && composer update && bin/console doctrine:migrations:migrate && bin/console cache:clear'
+# ssh kb240_learn@makelearn.fr 'cd ~/sites/preprod-dsides.makelearn.fr && composer2 update && bin/console doctrine:migrations:migrate && bin/console cache:clear'

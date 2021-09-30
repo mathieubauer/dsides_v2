@@ -24,7 +24,8 @@ class ClientController extends AbstractController
             ['displayOrder' => 'ASC']
         );
 
-        return $this->render('home/index.html.twig', [
+        return $this->render('project/index_topic.html.twig', [
+            'topic' => $client,
             'projects' => $projects,
         ]);
     }
