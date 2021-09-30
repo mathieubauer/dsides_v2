@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Project;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -26,17 +27,30 @@ class ProjectCrudController extends AbstractCrudController
     {
         return [
             // IdField::new('id'),
-            TextField::new('name'),
-            TextEditorField::new('content'),
+            TextField::new('name', 'Nom'),
+            TextEditorField::new('content', 'Description')->setSortable(false),
 
-            TextField::new('imageFile')->setFormType(VichImageType::class),
-            ImageField::new('image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex(),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            ImageField::new('image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
 
             TextField::new('slug'),
-            AssociationField::new('client')->setFormTypeOptions(['choice_label' => 'name']),
+            AssociationField::new('client')
+                ->setFormTypeOptions(['choice_label' => 'name'])
+                ->formatValue(function($value, $entity) {
+                    return $entity->getClient()->getName();
+                }),
             AssociationField::new('category')->setFormTypeOptions(['choice_label' => 'name']),
             NumberField::new('displayOrder'),
             BooleanField::new('isDisplayed'),
         ];
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+            ->setPageTitle('index', 'Projets',)
+            ->setPageTitle('edit', 'Modifier le projet',)
+            ->setDefaultSort(['displayOrder' => 'ASC'])
+            ;
     }
 }

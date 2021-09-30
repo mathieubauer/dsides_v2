@@ -28,15 +28,21 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('dsides');
+            ->setTitle('dsides')
+            ->setFaviconPath('/img/favicon_dark.jpg')
+            ;
     }
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('Retour au site', 'fa fa-home', 'home');
+        // yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+
+        // Projets
+        yield MenuItem::section('Projets');
         yield MenuItem::linkToCrud('Projets', 'fas fa-list', Project::class);
-        yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
-        yield MenuItem::linkToCrud('Clients', 'fas fa-list', Client::class);
-        yield MenuItem::linkToCrud('Équipe', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Catégories', 'fas fa-tags', Category::class);
+        yield MenuItem::linkToCrud('Clients', 'fas fa-building', Client::class);
+        yield MenuItem::linkToCrud('Équipe', 'fas fa-users', User::class);
     }
 }
