@@ -5,55 +5,18 @@
 
 <main>
 
-    
-
     <div class="container-fluid p-0">
 
         <div class="m-5">
             <h1>{{ topic.name }}</h1>
         </div>
 
-                
-
-        
-
         <div class="row g-0">
 
             {% for project in projects|filter(project => project.isDisplayed) %}
-
-            <div class="col-md-4 mb-3">
-                <div class="position-relative">
-
-                    <div class="scrim cover_200 position-absolute bottom-0 start-50 translate-middle-x"></div>
-
-                    <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('w800') }}"
-                        class="cover_300" alt="{{ project.name }}">
-
-                    <div class="position-absolute bottom-0 start-0 p-4 w-100">
-                        <div class="text-white text_shadow">
-                            <h2>{{ project.name }}</h2>
-                            <h3>{{ project.client.name }}</h3>
-                        </div>
-                        <div class="d-flex flex-row-reverse">
-                            {% for category in project.category %}
-                            <div class="badge bg-white text_color_87 rounded-pill mx-1">{{ category.name }}</div>
-                            {% endfor %}
-                        </div>
-                    </div>
-
-                    {% if project.slug %}
-                    <a href="{{ path('project_show_slug', {'slug': project.slug }) }}">
-                        <div class="cover_300 position-absolute bottom-0 start-50 translate-middle-x"></div>
-                    </a>
-                    {% else %}
-                    <a href="{{ path('project_show', {'id': project.id }) }}">
-                        <div class="cover_300 position-absolute bottom-0 start-50 translate-middle-x"></div>
-                    </a>
-                    {% endif %}
-
-
+                <div class="col-md-4">
+                    {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
                 </div>
-            </div>
             {% endfor %}
 
         </div>

@@ -25,7 +25,7 @@ class ProjectController extends AbstractController
     }
 
     /**
-     * @Route("/clean_displayOrder", name="clean_displayOrder")
+     * @Route("/project/reorder", name="reorder")
      */
     public function reorderModules(Request $request, ProjectRepository $projectRepository)
     {
@@ -47,7 +47,7 @@ class ProjectController extends AbstractController
         }
         $em->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('admin');
     }
 
 }

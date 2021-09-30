@@ -44,5 +44,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Catégories', 'fas fa-tags', Category::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-building', Client::class);
         yield MenuItem::linkToCrud('Équipe', 'fas fa-users', User::class);
+
+        // Actions admin
+        yield MenuItem::section('Actions admin');
+        yield MenuItem::linkToRoute('Réordonner', 'fa fa-sort-numeric-down', 'reorder');
     }
 }
