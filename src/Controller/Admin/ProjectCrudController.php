@@ -40,8 +40,9 @@ class ProjectCrudController extends AbstractCrudController
                     return $entity->getClient()->getName();
                 }),
             AssociationField::new('category')->setFormTypeOptions(['choice_label' => 'name']),
-            NumberField::new('displayOrder'),
-            BooleanField::new('isDisplayed'),
+            NumberField::new('displayOrder', 'Ordre'),
+            BooleanField::new('isDisplayed', 'Affiché ?'),
+            BooleanField::new('isFeatured', 'En vedette ?'),
         ];
     }
 

@@ -9,14 +9,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/project")
- */
+
 class ProjectController extends AbstractController
 {
 
     /**
-     * @Route("/{id}", name="project_show", requirements={"id":"\d+"})
+     * @Route("/project/{id}", name="project_show", requirements={"id":"\d+"})
+     * @Route("/{slug}", name="project_show_slug")
      */
     public function show(Project $project, Request $request): Response
     {

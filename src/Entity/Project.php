@@ -58,7 +58,7 @@ class Project
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isDisplayed;
+    private $isDisplayed = true;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -77,6 +77,11 @@ class Project
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isFeatured = false;
 
 
     public function __construct()
@@ -211,5 +216,17 @@ class Project
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function getIsFeatured(): ?bool
+    {
+        return $this->isFeatured;
+    }
+
+    public function setIsFeatured(?bool $isFeatured): self
+    {
+        $this->isFeatured = $isFeatured;
+
+        return $this;
     }
 }
