@@ -48,7 +48,7 @@ class Project
     /**
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="projects")
      */
-    private $category;
+    private $category; // aurait dû être au pluriel
 
     /**
      * @ORM\Column(type="integer")
@@ -83,10 +83,16 @@ class Project
      */
     private $isFeatured = false;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="projects")
+     */
+    private $users;
+
 
     public function __construct()
     {
         $this->category = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -226,6 +232,33 @@ class Project
     public function setIsFeatured(?bool $isFeatured): self
     {
         $this->isFeatured = $isFeatured;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->addProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeProject($this);
+        }
 
         return $this;
     }

@@ -7,9 +7,19 @@
 
     <div class="container-fluid p-0">
 
+        {% if topic.name is defined %}
+            <div class="m-5">
+                <h1>{{ topic.name }}</h1>
+            </div>
+        {% endif %}
+
+        {% if topic.firstName is defined and topic.lastName is defined %}
         <div class="m-5">
-            <h1>{{ topic.name }}</h1>
+            <h1>{{ topic.firstName }} {{ topic.lastName }}</h1>
         </div>
+        {% endif %}
+        
+        {# TODO: displayName #}
 
         <div class="row g-0">
 
