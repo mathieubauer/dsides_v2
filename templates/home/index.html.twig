@@ -9,8 +9,8 @@
         <div class="row">
 
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured) %}
-                <div class="col-md-12 mb-3">
-                    {{ include('project/_card.html.twig', {cover: 'cover_420', filter: 'w1600'}) }}
+                <div class="col-md-12">
+                    {{ include('project/_card_featured.html.twig', {cover: 'cover_420', filter: 'w1600'}) }}
                 </div>
             {% endfor %}
 
