@@ -38,15 +38,24 @@ class ProjectCrudController extends AbstractCrudController
             TextEditorField::new('content', 'Description')->setSortable(false),
 
             TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            ImageField::new('image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
+            ImageField::new('image', 'Image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
+
+            TextField::new('featuredImageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            ImageField::new('featuredImage', 'Image à la une')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
+
+            TextField::new('gridImageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            ImageField::new('gridImage', 'Image mosaïque')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
 
             TextField::new('slug')
-                ->setHelp("Lien pour l'accès direct (exemple : https://dsides.net/slug)"),
+                ->setHelp("Lien pour l'accès direct (exemple : https://dsides.net/slug)")
+                ->onlyOnIndex(),
+
             AssociationField::new('client')
                 ->setFormTypeOptions(['choice_label' => 'name'])
                 ->formatValue(function($value, $entity) {
                     return $entity->getClient()->getName();
                 }),
+
             AssociationField::new('category')->setFormTypeOptions(['choice_label' => 'name']),
             // AssociationField::new('users')->setFormTypeOptions(['choice_label' => 'email']),
             NumberField::new('displayOrder', 'Ordre')->onlyOnIndex(),
@@ -69,28 +78,11 @@ class ProjectCrudController extends AbstractCrudController
         $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
         // TODO: reorder avant
 
-        // $project = new Project();
         $entityInstance
             ->setDisplayOrder(count($projects) + 1)
             ->setSlug($this->slugger->slug($entityInstance->getName()));
 
         parent::persistEntity($entityManager, $entityInstance);
-        
     }
 
-    /*
-    public function persistEntity(string $entityFqcn)
-    {
-        $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
-        // TODO: reorder avant
-
-        $project = new Project();
-        $project
-            ->setDisplayOrder(count($projects) + 1)
-            ->setSlug($this->slugger->slug($project->getName()))
-        ;
-        // return $project;
-        // parent::persistEntity($project, );
-    }
-    */
 }

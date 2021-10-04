@@ -73,6 +73,30 @@ class Project
     private $imageFile;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $featuredImage;
+
+    /**
+     * @Vich\UploadableField(mapping="project_images", fileNameProperty="featuredImage")
+     * @var File
+     */
+    private $featuredImageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $gridImage;
+
+    /**
+     * @Vich\UploadableField(mapping="project_images", fileNameProperty="gridImage")
+     * @var File
+     */
+    private $gridImageFile;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      * @var \DateTime
      */
@@ -262,4 +286,61 @@ class Project
 
         return $this;
     }
+
+    public function setFeaturedImageFile(File $featuredImage = null)
+    {
+        $this->featuredImageFile = $featuredImage;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($featuredImage) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getFeaturedImageFile()
+    {
+        return $this->featuredImageFile;
+    }
+
+    public function setFeaturedImage($featuredImage)
+    {
+        $this->featuredImage = $featuredImage;
+    }
+
+    public function getFeaturedImage()
+    {
+        return $this->featuredImage;
+    }
+
+    public function setGridImageFile(File $gridImage = null)
+    {
+        $this->gridImageFile = $gridImage;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($gridImage) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getGridImageFile()
+    {
+        return $this->gridImageFile;
+    }
+
+    public function setGridImage($gridImage)
+    {
+        $this->gridImage = $gridImage;
+    }
+
+    public function getGridImage()
+    {
+        return $this->gridImage;
+    }
+
 }
