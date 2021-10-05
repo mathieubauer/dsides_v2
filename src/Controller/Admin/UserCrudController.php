@@ -21,6 +21,8 @@ class UserCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+
+            EmailField::new('email'),
             TextField::new('firstName'),
             TextField::new('lastName'),
             TextEditorField::new('content'),
@@ -30,10 +32,15 @@ class UserCrudController extends AbstractCrudController
 
             AssociationField::new('projects')->setFormTypeOptions(['choice_label' => 'name']),
 
-            TextField::new('slug'),
-            EmailField::new('email'),
-            TextField::new('password')->hideOnIndex(),
-            ArrayField::new('roles'),
+            TextField::new('slug')
+                ->setPermission('ROLE_ADMIN'),
+            
+            TextField::new('password')
+                ->hideOnIndex()
+                ->setPermission('ROLE_ADMIN'),
+
+            ArrayField::new('roles')
+                ->setPermission('ROLE_ADMIN'),
         ];
     }
 }
