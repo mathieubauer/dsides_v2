@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="Invalid credentials.">
                 <source>Invalid credentials.</source>
-                <target>Désolé mais une erreur c'est produit lors de la connection</target>
+                <target>Désolé, ces identifiants sont incorrects. Vous pouvez réessayer ou contacter l'administrateur.</target>
             </trans-unit>
         </body>
     </file>
