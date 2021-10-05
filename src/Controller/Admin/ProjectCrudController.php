@@ -91,8 +91,8 @@ class ProjectCrudController extends AbstractCrudController
 
             BooleanField::new('isDisplayed', 'Affiché ?'),
 
-            BooleanField::new('isFeatured', 'À la une ?')
-                ->setCssClass('mb-5'),
+            BooleanField::new('isFeatured', 'À la une ?'),
+                // ->setCssClass('mb-5') // fait bugger la modification du toggle button
 
             TextField::new('slug')
                 ->setHelp("Lien pour l'accès direct (exemple : https://dsides.net/slug)")
