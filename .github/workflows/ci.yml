@@ -22,7 +22,7 @@ jobs:
         with:
           php_version: 7.4
           version: 2
-          command: update
+          command: update --ignore-platform-reqs
 
       - name: Command Yarn
         uses: actions/setup-node@v2
