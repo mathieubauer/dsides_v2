@@ -1,5 +1,8 @@
 name: CI
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,10 +17,11 @@ jobs:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
-      - name: Command composer
+      - name: Install dependencies
         uses: php-actions/composer@v6
         with:
           php_version: 7.4
+          version: latest
           command: composer install
           args: --no-interaction
 
