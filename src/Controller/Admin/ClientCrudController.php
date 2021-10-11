@@ -20,7 +20,8 @@ class ClientCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name'),
-            TextField::new('slug'),
+            TextField::new('slug')
+                ->setPermission('ROLE_ADMIN'),
         ];
     }
 

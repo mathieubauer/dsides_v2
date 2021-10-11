@@ -19,7 +19,7 @@ class DashboardController extends AbstractDashboardController
 {
     /**
      * @Route("/admin", name="admin")
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      */
     public function index(): Response
     {
@@ -48,7 +48,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Équipe', 'fas fa-users', User::class);
 
         // Actions admin
-        yield MenuItem::section('Actions admin');
-        yield MenuItem::linkToRoute('Réordonner', 'fa fa-sort-numeric-down', 'reorder');
+        yield MenuItem::section('Actions admin')
+            ->setPermission('ROLE_ADMIN');
+        yield MenuItem::linkToRoute('Réordonner', 'fa fa-sort-numeric-down', 'reorder')
+            ->setPermission('ROLE_ADMIN');
     }
 }

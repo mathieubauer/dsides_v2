@@ -3,6 +3,7 @@
         <a class="navbar-brand" href="/">
             <img src="/img/logo_dsides_noir.png" alt="" height="40">
         </a>
+        {% if is_granted('ROLE_ADMIN') %}
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/admin">
@@ -10,5 +11,6 @@
                 </a>
             </li>
         </ul>
+        {% endif %}
     </div>
 </nav>

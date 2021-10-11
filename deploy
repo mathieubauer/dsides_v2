@@ -1,4 +1,14 @@
 #!/bin/sh
 # npm run build
-rsync -av ./ kb240_learn@makelearn.fr:~/sites/preprod-dsides.makelearn.fr --include=public/.htaccess --include=public/build --exclude-from=.gitignore
-ssh kb240_learn@makelearn.fr 'cd ~/sites/preprod-dsides.makelearn.fr && composer update && bin/console doctrine:migrations:migrate && bin/console cache:clear'
+
+# preprod
+# rsync -av ./ kb240_learn@makelearn.fr:~/sites/preprod-dsides.makelearn.fr --include=public/.htaccess --include=public/build --exclude-from=.gitignore
+# ssh kb240_learn@makelearn.fr 'cd ~/sites/preprod-dsides.makelearn.fr && composer update && bin/console doctrine:migrations:migrate && bin/console cache:clear'
+
+# dsides.dev
+# rsync -av ./ ki6of_admin@dsides.dev:~/web --include=public/.htaccess --include=public/build --exclude-from=.gitignore
+# ssh ki6of_admin@dsides.dev 'cd ~/web && composer update && bin/console doctrine:migrations:migrate && bin/console cache:clear'
+
+# dsides.net
+rsync -av ./ dsides-mbr@ssh.cluster006.hosting.ovh.net:~/www --include=public/.htaccess --include=public/build --exclude-from=.gitignore
+# ssh ki6of_admin@dsides.dev 'cd ~/web && composer update && bin/console doctrine:migrations:migrate && bin/console cache:clear'

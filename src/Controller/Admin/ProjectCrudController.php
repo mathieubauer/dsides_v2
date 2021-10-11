@@ -35,32 +35,70 @@ class ProjectCrudController extends AbstractCrudController
     {
         return [
             TextField::new('name', 'Nom'),
-            TextEditorField::new('content', 'Description')->setSortable(false),
-
-            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            ImageField::new('image', 'Image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
-
-            TextField::new('featuredImageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            ImageField::new('featuredImage', 'Image à la une')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
-
-            TextField::new('gridImageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            ImageField::new('gridImage', 'Image mosaïque')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
-
-            TextField::new('slug')
-                ->setHelp("Lien pour l'accès direct (exemple : https://dsides.net/slug)")
-                ->onlyOnIndex(),
 
             AssociationField::new('client')
                 ->setFormTypeOptions(['choice_label' => 'name'])
-                ->formatValue(function($value, $entity) {
+                ->formatValue(function ($value, $entity) {
                     return $entity->getClient()->getName();
                 }),
 
-            AssociationField::new('category')->setFormTypeOptions(['choice_label' => 'name']),
+            AssociationField::new('category', 'Catégories')
+                ->setFormTypeOptions(['choice_label' => 'name']),
+
+            TextEditorField::new('content', 'Description')
+                ->setSortable(false)
+                ->hideOnIndex(),
+
+            
+
+            TextField::new('featuredImageFile', 'Image à la une')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex()
+                ->setHelp("Affichage seulement quand le projet est mis à la une"),
+
+            ImageField::new('featuredImage', 'Image à la une')
+                ->setBasePath('/uploads/images/projects')
+                ->setUploadDir('public/uploads/images/projects')
+                ->onlyOnIndex()
+                ->setSortable(false),
+
+            TextField::new('gridImageFile', 'Image mosaïque')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex()
+                ->setHelp("Affichage quand le projet n'est pas mis à la une"),
+
+            ImageField::new('gridImage', 'Image mosaïque')
+                ->setBasePath('/uploads/images/projects')
+                ->setUploadDir('public/uploads/images/projects')
+                ->onlyOnIndex()
+                ->setSortable(false),
+
+            TextField::new('imageFile', 'Image par défaut')
+                ->setFormType(VichImageType::class)
+                ->hideOnIndex()
+                ->setHelp("Affichage en en-tête de la fiche"),
+
+            ImageField::new('image', 'Image par défaut')
+                ->setBasePath('/uploads/images/projects')
+                ->setUploadDir('public/uploads/images/projects')
+                ->onlyOnIndex()
+                ->setSortable(false),
+
+            
             // AssociationField::new('users')->setFormTypeOptions(['choice_label' => 'email']),
-            NumberField::new('displayOrder', 'Ordre')->onlyOnIndex(),
+            NumberField::new('displayOrder', 'Ordre')
+                ->setPermission('ROLE_ADMIN'),
+
             BooleanField::new('isDisplayed', 'Affiché ?'),
-            BooleanField::new('isFeatured', 'En vedette ?'),
+
+            BooleanField::new('isFeatured', 'À la une ?'),
+                // ->setCssClass('mb-5') // fait bugger la modification du toggle button
+
+            TextField::new('slug')
+                ->setHelp("Lien pour l'accès direct (exemple : https://dsides.net/slug)")
+                ->hideOnIndex()
+                ->setPermission('ROLE_ADMIN'),
+
         ];
     }
 
