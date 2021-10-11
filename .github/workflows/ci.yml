@@ -22,7 +22,7 @@ jobs:
         with:
           php_version: 7.4
           version: latest
-          command: composer install
+          command: install
           args: --no-interaction
 
       - name: Command Yarn
