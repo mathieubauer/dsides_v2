@@ -23,7 +23,6 @@ jobs:
           php_version: 7.4
           version: 2
           command: update
-          args: --no-interaction
 
       - name: Command Yarn
         uses: actions/setup-node@v2
