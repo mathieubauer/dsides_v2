@@ -1,0 +1,32 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    name: Package install
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+          command: update --ignore-platform-reqs
+          
+      - name: Command Yarn
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+          version: 1
+      - run: yarn install
+
+      - name: Command Npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: npm install
