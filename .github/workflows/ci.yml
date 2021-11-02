@@ -7,15 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    name: Packages Install
+    name: Composer update
     steps:
       - uses: actions/checkout@v2
 
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          php_version: 7.4
-          version: 2
           command: update --ignore-platform-reqs
           
       - name: Command Yarn
