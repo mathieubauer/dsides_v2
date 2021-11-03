@@ -15,14 +15,14 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class AppFixtures extends Fixture
 {
 
-    private $encoder;
+    private UserPasswordHasherInterface $encoder;
 
     public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
 
@@ -43,8 +43,10 @@ class AppFixtures extends Fixture
 
         // clients
 
+        $client = new Client();
+        $category = new Category();
+
         for ($i = 0; $i < 3; $i++) {
-            $client = new Client();
             $client->setName($faker->company());
             $manager->persist($client);
         }
@@ -52,7 +54,6 @@ class AppFixtures extends Fixture
         // categories
 
         for ($i = 0; $i < 3; $i++) {
-            $category = new Category();
             $category->setName($faker->word());
             $manager->persist($category);
         }

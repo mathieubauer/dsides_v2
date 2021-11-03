@@ -30,3 +30,8 @@ jobs:
           node-version: '14'
           cache: 'npm'
       - run: npm install
+
+      - name: phpStan Control
+        uses: php-actions/phpstan@v2
+        with:
+          configuration: phpstan.neon.dist

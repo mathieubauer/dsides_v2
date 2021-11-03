@@ -124,6 +124,15 @@ class Project
         return $this->id;
     }
 
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
     public function getName(): ?string
     {
         return $this->name;
@@ -241,6 +250,8 @@ class Project
     public function setImage($image)
     {
         $this->image = $image;
+
+        return $this;
     }
 
     public function getImage()
@@ -308,6 +319,8 @@ class Project
     public function setFeaturedImage($featuredImage)
     {
         $this->featuredImage = $featuredImage;
+
+        return $this;
     }
 
     public function getFeaturedImage()
@@ -336,11 +349,32 @@ class Project
     public function setGridImage($gridImage)
     {
         $this->gridImage = $gridImage;
+
+        return $this;
     }
 
     public function getGridImage()
     {
         return $this->gridImage;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt(): \DateTime
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     * @return \DateTime
+     */
+    public function setUpdatedAt(\DateTime $updatedAt): \DateTime
+    {
+       return $this->updatedAt = $updatedAt;
+    }
+
+
 
 }

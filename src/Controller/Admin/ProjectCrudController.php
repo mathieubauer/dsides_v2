@@ -19,7 +19,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 class ProjectCrudController extends AbstractCrudController
 {
 
-    protected $slugger;
+    protected SluggerInterface $slugger;
 
     public function __construct(SluggerInterface $slugger)
     {
