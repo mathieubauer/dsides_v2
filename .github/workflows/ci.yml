@@ -33,5 +33,3 @@ jobs:
 
       - name: phpStan Control
         uses: php-actions/phpstan@v2
-        with:
-          configuration: phpstan.neon.dist
