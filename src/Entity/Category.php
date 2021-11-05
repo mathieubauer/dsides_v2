@@ -49,6 +49,15 @@ class Category
         return $this->id;
     }
 
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+
     public function getName(): ?string
     {
         return $this->name;
@@ -79,6 +88,14 @@ class Category
     public function getProjects(): Collection
     {
         return $this->projects;
+    }
+
+    /**
+     * @param ArrayCollection $projects
+     */
+    public function setProjects(ArrayCollection $projects): void
+    {
+        $this->projects = $projects;
     }
 
     public function addProject(Project $project): self
