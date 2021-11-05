@@ -17,9 +17,9 @@
         </div>
     </div>
 
-    <div class="container pt-5 pb-5">
+    <div class="container-fluid pt-5 pb-5 bg-black">
         <div class="m-5 pt-5 pb-5">
-            <h1 class="text-center">dsides accompagne les projets de transformation et de design du travail</h1>
+            <h1 class="text-center text-white">dsides accompagne les projets de transformation et de design du travail</h1>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
 
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
             <div class="col">
-                <div class="card h-100 border-0 rounded-0 bg-black">
+                <div class="card h-100 border-0 rounded-0 bg-white">
                     {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
                 </div>
             </div>
