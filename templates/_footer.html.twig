@@ -1,42 +1,39 @@
 <footer>
-    <div id="contact" class="container-fluid bg-black text-white text-center p-5 fs_1250 f_serif">
+    <div id="contact" class="container-fluid bg-black text-white p-5 f_serif">
         <div class="row">
-            <div class="col-md-12">
-                <p class="text_bigger_responsive">Prêt pour le grand plongeon ? <a href="mailto:alain.germain@dsides.net" class="text-white fw_600 no_style">Contactez nous !</a></p>
+            <div class="col-md-12 pt-5 pb-5 text_footer_punshline">
+                <p>Prêt pour le grand plongeon ? <a href="mailto:alain.germain@dsides.net" class="text-white no_style fw_700">Contactez nous !</a></p>
             </div>
             <div class="col-md-12 pt-4">
                 <div class="row">
                     <div class="col-md-4 text-start p-3">
                         <div class="mb-3">
-                            <img src="{{ asset('img/logo_dsides_blanc.png') }}" class="w-50 img-fluid" alt="dsides_logo">
+                            <img src="{{ asset('img/logo_dsides_blanc.png') }}" class="w-50" alt="dsides_logo">
                         </div>
-                        <address>
+                        <address class="text_footer_address">
                             <p>7 rue René Boulanger<br>
                                 Métro République<br>
                                 75010 Paris - France</p>
+                            <p>contact[at]dsides.net</p>
                         </address>
                     </div>
                     <div class="col-md-2 p-3">
-                        <ul class="list-unstyled text-start">
-                            <li>Work</li>
-                            <li>Our crew</li>
-                            <li>We hiring !</li>
-                            <li>Clients</li>
-                            <li>Jobs</li>
+
+                        <ul class="list-unstyled text-start text_footer_list">
+                            {% for categorie in categories %}
+                                <li>{{ categorie.name }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="col-md-2 p-3">
-                        <ul class="list-unstyled text-start">
-                            <li>Digital Transformation</li>
-                            <li>Consulting</li>
-                            <li>Graphic Design</li>
-                            <li>Event</li>
-                            <li>Research</li>
-                            <li>Training Program</li>
+                        <ul class="list-unstyled text-start text_footer_list">
+                            {% for categorie in categories %}
+                                <li>{{ categorie.name }}</li>
+                            {% endfor %}
                         </ul>
                     </div>
-                    <div class="col-md-4 p-3">
-                        <p class="fw_700 fs_2650 fst-italic">Follow @dsides</p>
+                    <div class="col-md-4 p-3 text-center">
+                        <p class="fw_700 fst-italic text_footer_follow">Follow @dsides</p>
                         <i class="fab fa-instagram fa-3x p-2"></i>
                         <i class="fab fa-linkedin fa-3x p-2"></i>
 
@@ -44,6 +41,5 @@
                 </div>
             </div>
         </div>
-        contact[at]dsides.net
     </div>
 </footer>

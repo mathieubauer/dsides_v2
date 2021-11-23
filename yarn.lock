@@ -4625,6 +4625,13 @@ rework@1.0.1:
     convert-source-map "^0.3.3"
     css "^2.0.0"
 
+rfs@^9.0.6:
+  version "9.0.6"
+  resolved "https://registry.yarnpkg.com/rfs/-/rfs-9.0.6.tgz#ac5522ea440a762efcbdb181367e7b3f163778af"
+  integrity sha512-KQ0EGVP4l3B3ynUZ1UNX3UoRAeswiX+ljGRcT+MoJKXRwXSUFpVZIPsqurH9pmY/AOGBFq7KKBq9fhRCkkg+SQ==
+  dependencies:
+    postcss-value-parser "^4.1.0"
+
 rimraf@^2.6.3:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.7.1.tgz#35797f13a7fdadc566142c29d4f07ccad483e3ec"

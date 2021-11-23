@@ -60,6 +60,20 @@ h3 { font-size: 1.25rem; } /*  20px */
 @media (min-width: 992px) { #landing_page .type_js { min-height: calc(2.75rem * 2.5); } }
 @media (min-width: 1200px) { #landing_page .type_js { min-height: calc(3rem * 2.5); } }
 
+.text_footer_punshline { font-size: 2rem; text-align: center; }
+.text_footer_address { font-size: 1.3rem; }
+.text_footer_list { font-size: 1.55rem; }
+.text_footer_follow{ font-size: 2.65rem; }
+
+@media (max-width: 320px) {
+    .text_footer_punshline {font-size: 1.8rem ;text-align: start; }
+    .text_footer_punshline a { font-size: 2rem; }
+    .text_footer_address { font-size: 1.2rem; }
+    .text_footer_list { font-size: 1.35rem; }
+    .text_footer_follow{ font-size: 2.12rem; }
+}
+
+
 .fs_750 {
     font-size: .75rem; /* 12px */
 }

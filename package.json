@@ -23,5 +23,8 @@
         "watch": "encore dev --watch",
         "build": "encore production --progress",
         "heroku-postbuild": "encore production --progress"
+    },
+    "dependencies": {
+        "rfs": "^9.0.6"
     }
 }
