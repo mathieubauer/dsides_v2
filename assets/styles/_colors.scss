@@ -15,8 +15,12 @@ $green:   #198754;
 $teal:    #20c997;
 $cyan:    #0dcaf0;
 
-$theme-colors: (
+//list-group
+$list-group-hover-bg: #15202B;
+$list-group-action-hover-color: $body-bg;
+$list-group-border-radius: 0;
 
+$theme-colors: (
     "success":    $green,
     "info":       $cyan,
     "warning":    $yellow,
