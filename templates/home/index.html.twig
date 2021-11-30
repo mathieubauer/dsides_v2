@@ -4,16 +4,13 @@
 {% block body %}
 
 <main>
-
     <div class="container-fluid p-0">
         <div class="row g-0">
-
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured) %}
                 <div class="col-md-12">
                     {{ include('project/_card_featured.html.twig', {cover: 'cover_420', filter: 'w1600'}) }}
                 </div>
             {% endfor %}
-
         </div>
     </div>
 
@@ -24,25 +21,27 @@
     </div>
 
     <div class="container-fluid p-0">
-        <div class="row row-cols-1 row-cols-md-3 g-0">
-
-            {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
-            <div class="col">
-                <div class="card h-100 border-0 rounded-0 bg-white">
-                    {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
-                </div>
-            </div>
+        <div class="list-group list-group-horizontal justify-content-between text-center" id="list-filter" role="tablist">
+            <a class="list-group-item list-group-item-action border-0" data-id="all">Tout</a>
+            {% for category in categories %}
+                <a class="list-group-item list-group-item-action border-0" data-id="{{ category.name }}">{{ category.name }}</a>
             {% endfor %}
-
+        </div>
+    </div>
+    <div class="container-fluid p-0">
+        <div id="row" class="row row-cols-1 row-cols-md-3 g-0">
+            {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
+                {% for category in project.category %}
+                    <div id="cardView" class="col {{ category.name }}" data-card="{{ category.name }}">
+                        <div class="card h-100 border-0 rounded-0 bg-white">
+                            {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
         </div>
     </div>
     
 </main>
 
 {% endblock %}
-
-{#
-TODO: admin, up et down buttons
-TODO: admin / editor & édition directe depuis la page si autorisé
-TODO: caché sur la page d'accueil mais affiché dans les tris
-#}
