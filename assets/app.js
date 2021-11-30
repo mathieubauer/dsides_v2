@@ -12,3 +12,17 @@ import 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+//Jquery;
+import 'jquery';
+
+$(document).ready(function () {
+    $("#list-filter a").click(function () {
+        let listitem = $(this).data("id");
+        if (listitem === 'all') {
+           $("#row #cardView").show(1000,"swing");
+        }else {
+            $("#row #cardView").hide();
+            $("." + listitem).show();
+        }
+    });
+})//jquery
