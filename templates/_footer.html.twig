@@ -18,19 +18,12 @@
                         </address>
                     </div>
                     <div class="col-md-2 p-3">
-
-                        <ul class="list-unstyled text-start text_footer_list">
+                        <div id="list-filter" class="list-group text-start text_footer_list bg-black">
+                            <a class="list-group-item bg-black" data-id="all">Tout</a>
                             {% for categorie in categories %}
-                                <li>{{ categorie.name }}</li>
+                                <a class="list-group-item bg-black" data-id="{{ categorie.name }}">{{ categorie.name }}</a>
                             {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="col-md-2 p-3">
-                        <ul class="list-unstyled text-start text_footer_list">
-                            {% for categorie in categories %}
-                                <li>{{ categorie.name }}</li>
-                            {% endfor %}
-                        </ul>
+                        </div>
                     </div>
                     <div class="col-md-4 p-3 text-center">
                         <p class="fw_700 fst-italic text_footer_follow">Follow @dsides</p>
