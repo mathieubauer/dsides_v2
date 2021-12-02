@@ -7,8 +7,24 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
-
 import 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+let $ = require('jquery');
+let jQueryBridget = require('jquery-bridget');
+let Isotope = require('isotope-layout');
+jQueryBridget('isotope', Isotope, $);
+
+let $grid = $('.grid').isotope({
+    itemSelector: '.grid-item',
+    layoutMode:'fitRows'
+});
+
+$("#list-filter a").click(function () {
+    let filterVal = $(this).attr('data-filter');
+    $grid.isotope({
+        filter: filterVal,
+        stagger: 50
+    })
+});

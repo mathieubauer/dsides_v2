@@ -8,3 +8,7 @@
 @import "_cards";
 @import "_buttons";
 @import "_layout";
+
+.list-group-item-action:hover {
+  cursor: pointer;
+}

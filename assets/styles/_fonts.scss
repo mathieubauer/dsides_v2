@@ -63,13 +63,15 @@ h3 { font-size: 1.25rem; } /*  20px */
 .text_footer_punshline { font-size: 2rem; text-align: center; }
 .text_footer_address { font-size: 1.3rem; }
 .text_footer_list { font-size: 1.55rem; }
+.text_footer_list a { font-size: 1.55rem; color: #fffbeb }
+.text_footer_list a:hover {cursor: pointer }
 .text_footer_follow{ font-size: 2.65rem; }
 
 @media (max-width: 320px) {
     .text_footer_punshline {font-size: 1.8rem ;text-align: start; }
     .text_footer_punshline a { font-size: 2rem; }
     .text_footer_address { font-size: 1.2rem; }
-    .text_footer_list { font-size: 1.35rem; }
+    .text_footer_list { font-size: 1.35rem;}
     .text_footer_follow{ font-size: 2.12rem; }
 }
 
