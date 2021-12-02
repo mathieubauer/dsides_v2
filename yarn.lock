@@ -3293,7 +3293,14 @@
     "merge-stream" "^2.0.0"
     "supports-color" "^8.0.0"
 
-"jquery@^3.6.0":
+"jquery-bridget@^3.0.0":
+  "integrity" "sha512-UamdtgKjbmSUiLfUbJk+VA5q9fMRy4h2XYU1D1OlF2wzI1wIQyuIb7WTYtaMPYML2RgdAOTPyvQUmehWwoXazw=="
+  "resolved" "https://registry.npmjs.org/jquery-bridget/-/jquery-bridget-3.0.0.tgz"
+  "version" "3.0.0"
+  dependencies:
+    "jquery" ">=1.4.2 <4"
+
+"jquery@^3.6.0", "jquery@>=1.4.2 <4":
   "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
   "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
   "version" "3.6.0"
