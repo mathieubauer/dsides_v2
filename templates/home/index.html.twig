@@ -22,17 +22,17 @@
 
     <div class="container-fluid p-0">
         <div class="list-group list-group-horizontal justify-content-between text-center" id="list-filter" role="tablist">
-            <a class="list-group-item list-group-item-action border-0" data-id="all">Tout</a>
+                <a class="list-group-item list-group-item-action border-0" data-filter="*">Tout</a>
             {% for category in categories %}
-                <a class="list-group-item list-group-item-action border-0" data-id="{{ category.name }}">{{ category.name }}</a>
+                <a class="list-group-item list-group-item-action border-0" data-filter="{{ '.' ~ category.name }}">{{ category.name }}</a>
             {% endfor %}
         </div>
     </div>
     <div class="container-fluid p-0">
-        <div id="row" class="row row-cols-1 row-cols-md-3 g-0">
+        <div id="row" class="grid row row-cols-1 row-cols-md-3 g-0">
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
                 {% for category in project.category %}
-                    <div id="cardView" class="col {{ category.name }}" data-card="{{ category.name }}">
+                    <div id="cardView" class="col grid-item {{ category.name }}">
                         <div class="card h-100 border-0 rounded-0 bg-white">
                             {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
                         </div>

@@ -7,23 +7,24 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
-
 import 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
-//Jquery;
-import 'jquery';
-import 'isotope-layout'
+let $ = require('jquery');
+let jQueryBridget = require('jquery-bridget');
+let Isotope = require('isotope-layout');
+jQueryBridget('isotope', Isotope, $);
 
-$(document).ready(function () {
-    $("#list-filter a").click(function () {
-        let listitem = $(this).data("id");
-        if (listitem === 'all') {
-           $("#row #cardView").show(1000,"swing");
-        }else {
-            $("#row #cardView").hide();
-            $("." + listitem).show();
-        }
-    });
-})//jquery
+let $grid = $('.grid').isotope({
+    itemSelector: '.grid-item',
+    layoutMode:'fitRows'
+});
+
+$("#list-filter a").click(function () {
+    let filterVal = $(this).attr('data-filter');
+    $grid.isotope({
+        filter: filterVal,
+        stagger: 50
+    })
+});
