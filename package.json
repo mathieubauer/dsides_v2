@@ -25,6 +25,7 @@
         "heroku-postbuild": "encore production --progress"
     },
     "dependencies": {
+        "isotope-layout": "^3.0.6",
         "rfs": "^9.0.6"
     }
 }

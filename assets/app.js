@@ -14,6 +14,7 @@ import 'bootstrap';
 import './bootstrap';
 //Jquery;
 import 'jquery';
+import 'isotope-layout'
 
 $(document).ready(function () {
     $("#list-filter a").click(function () {
