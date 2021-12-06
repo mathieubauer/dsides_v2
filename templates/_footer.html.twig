@@ -29,7 +29,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div id="list-filter" class="list-group text-start text_footer_list bg-black">
-                                    {% for categorie in categories|slice(3) %}
+                                    {% for categorie in categories|slice( categories|length / 2 ) %}
                                         <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
                                     {% endfor %}
                                 </div>
