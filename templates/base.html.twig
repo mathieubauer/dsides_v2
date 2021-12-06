@@ -23,7 +23,10 @@
     {% block navbar %} {{ include('_navbar.html.twig') }} {% endblock %}
     {% block body %}{% endblock %}
     {% block footer %} {{ include('_footer.html.twig') }} {% endblock %}
-    {% block javascripts %} {{ encore_entry_script_tags('app') }} {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('iso') }}
+    {% endblock %}
 </body>
 
 </html>
