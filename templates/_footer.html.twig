@@ -34,7 +34,7 @@
                                     {% for categorie in categories|slice(3) %}
                                         {% if categorie.isMenu %}
                                             <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
-                                        {% endif %}
+                                        {% endif %}                             
                                     {% endfor %}
                                 </div>
                             </div>
