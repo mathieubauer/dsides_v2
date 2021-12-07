@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Project;
 use App\Repository\ProjectRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,8 +22,11 @@ class ProjectController extends AbstractController
      */
     public function show(Project $project, Request $request): Response
     {
+        $category = $this->getDoctrine()->getRepository(Category::class)->findAll();
+
         return $this->render('project/show.html.twig', [
             'project' => $project,
+            'categories' => $category
         ]);
     }
 
