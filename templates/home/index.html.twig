@@ -24,14 +24,16 @@
         <div class="list-group list-group-horizontal justify-content-between text-center" id="list-filter" role="tablist">
                 <a class="list-group-item list-group-item-action border-0" data-filter="*">Tout</a>
             {% for category in categories %}
-                <a class="list-group-item list-group-item-action border-0" data-filter="{{ '.' ~ category.name|slug('_') }}">{{ category.name|capitalize }}</a>
+                {% if category.isMenu %}
+                    <a class="list-group-item list-group-item-action border-0" data-filter="{{ '.' ~ category.name|slug('_') }}">{{ category.name|capitalize }}</a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
     <div class="container-fluid p-0">
         <div id="homeViewArticle" class="grid row row-cols-1 row-cols-md-3 g-0">
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
-                {% for category in project.category %}
+                {% for category in project.category|filter( category => category.isMenu ) %}
                     <div id="cardView" class="col grid-item {{ category.name|slug('_') }}">
                         <div class="card h-100 border-0 rounded-0 bg-white">
                             {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
