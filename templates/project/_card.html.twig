@@ -7,7 +7,7 @@
         <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter(filter) }}" class="{{ cover }}"
             alt="{{ project.name }}">
         {% endif %}
-        <a data-bs-toggle="modal" data-bs-target="#modal_{{ project.id }}">
+        <a href="{{ path('project_show', {id: project.id}) }}">
             <div class="{{ cover }} position-absolute bottom-0 start-50 translate-middle-x"></div>
         </a>
     </div>
@@ -23,6 +23,7 @@
     </div>
 
 <!-- Modal -->
+{#
 <div class="modal fade" id="modal_{{ project.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
@@ -58,3 +59,4 @@
         </div>
     </div>
 </div>
+ #}
