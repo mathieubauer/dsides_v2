@@ -34,3 +34,4 @@ yarn-error.log
 !/public/uploads/images/projects/placeholder.jpg
 
 /.env
+assets/styles/app.css
