@@ -3,7 +3,7 @@
 
 {% block body %}
 
-<main>
+
     <div class="container-fluid p-0">
         <div class="row g-0">
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured) %}
@@ -30,6 +30,7 @@
             {% endfor %}
         </div>
     </div>
+
     <div class="container-fluid p-0">
         <div id="homeViewArticle" class="grid row row-cols-1 row-cols-md-3 g-0">
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured == 0) %}
@@ -39,11 +40,9 @@
                             {{ include('project/_card.html.twig', {cover: 'cover_300', filter: 'w800'}) }}
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             {% endfor %}
         </div>
     </div>
-    
-</main>
 
 {% endblock %}
