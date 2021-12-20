@@ -137,7 +137,7 @@ class Category
     /**
      * @return bool
      */
-    public function isMenu(): bool
+    public function isMenu(): ?bool
     {
         return $this->isMenu;
     }
