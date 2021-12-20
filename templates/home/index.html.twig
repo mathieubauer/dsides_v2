@@ -3,7 +3,7 @@
 
 {% block body %}
 
-
+<main>
     <div class="container-fluid p-0">
         <div class="row g-0">
             {% for project in projects|filter(project => project.isDisplayed and project.isFeatured) %}
@@ -21,7 +21,7 @@
     </div>
 
     <div class="container-fluid p-0 sticky-top">
-        <div class="list-group list-group-horizontal justify-content-between text-center" id="list-filter" role="tablist">
+        <div class="list-group list-group-horizontal justify-content-between text-center overflow-auto" id="list-filter" role="tablist">
                 <a class="list-group-item list-group-item-action border-0" data-filter="*">Tout</a>
             {% for category in categories %}
                 {% if category.isMenu %}
@@ -44,5 +44,5 @@
             {% endfor %}
         </div>
     </div>
-
+</main>
 {% endblock %}
