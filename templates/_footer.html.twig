@@ -23,14 +23,18 @@
                                 <div id="list-filter" class="list-group text-start text_footer_list bg-black">
                                     <a class="list-group-item bg-black" data-filter="*">Tout</a>
                                     {% for categorie in categories|slice(0,3) %}
-                                        <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
+                                        {% if categorie.isMenu %}
+                                            <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
+                                        {% endif %}
                                     {% endfor %}
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div id="list-filter" class="list-group text-start text_footer_list bg-black">
-                                    {% for categorie in categories|slice( categories|length / 2 ) %}
-                                        <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
+                                    {% for categorie in categories|slice(3) %}
+                                        {% if categorie.isMenu %}
+                                            <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
+                                        {% endif %}                             
                                     {% endfor %}
                                 </div>
                             </div>

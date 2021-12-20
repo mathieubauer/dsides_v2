@@ -39,6 +39,11 @@ class Category
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isMenu = true;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
@@ -128,4 +133,22 @@ class Category
 
         return $this;
     }
+
+    /**
+     * @return bool
+     */
+    public function isMenu(): bool
+    {
+        return $this->isMenu;
+    }
+
+    /**
+     * @param bool $isMenu
+     */
+    public function setIsMenu(bool $isMenu): void
+    {
+        $this->isMenu = $isMenu;
+    }
+
+
 }
