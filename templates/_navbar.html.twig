@@ -3,6 +3,13 @@
         <a class="navbar-brand" href="/">
             <img src="{{ asset('img/logo_dsides_noir.png') }}" alt="" height="40">
         </a>
+        {% if app.request.attributes.get('id') %}
+                <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
+                    <i class="fas fa-chevron-left me-2"></i>
+                    <span>Retour</span>
+                </a>
+        {% endif %}
+
         {% if is_granted('ROLE_ADMIN') %}
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
