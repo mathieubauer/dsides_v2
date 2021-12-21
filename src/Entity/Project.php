@@ -112,11 +112,17 @@ class Project
      */
     private $users;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Attachment::class, mappedBy="project",cascade={"persist"})
+     */
+    private $attachments;
+
 
     public function __construct()
     {
         $this->category = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->attachments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -373,6 +379,36 @@ class Project
     public function setUpdatedAt(\DateTime $updatedAt): \DateTime
     {
        return $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @return Collection|Attachment[]
+     */
+    public function getAttachments(): Collection
+    {
+        return $this->attachments;
+    }
+
+    public function addAttachment(Attachment $attachment): self
+    {
+        if (!$this->attachments->contains($attachment)) {
+            $this->attachments[] = $attachment;
+            $attachment->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAttachment(Attachment $attachment): self
+    {
+        if ($this->attachments->removeElement($attachment)) {
+            // set the owning side to null (unless already changed)
+            if ($attachment->getProject() === $this) {
+                $attachment->setProject(null);
+            }
+        }
+
+        return $this;
     }
 
 

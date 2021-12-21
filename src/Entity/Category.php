@@ -150,5 +150,10 @@ class Category
         $this->isMenu = $isMenu;
     }
 
+    public function getIsMenu(): ?bool
+    {
+        return $this->isMenu;
+    }
+
 
 }
