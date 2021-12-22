@@ -7,25 +7,41 @@
     alt="{{ project.name }}">
 
 
-    <div class="mt-5 mx-auto" style="max-width: 500px;">
+    <div class="mt-5 mx-auto" style="max-width: 700px;">
         <h1>{{ project.name }}</h1>
         <h3> {{ project.client.name }}</h3>
 
         {{ project.content|raw }}
-        <div class="mt-4">
+
+        <div class="my-4">
             {% for category in project.category %}
                 <span class="badge bg-secondary rounded">{{ category.name }}</span>
             {% endfor %}
         </div>
 
-
+        {# Vue des images suplémentaires en style grid #}
+        {% if project.attachments %}
+        <div class="container overflow-hidden">
+            <div class="row row-cols-2 g-3">
+        {% for listImage in project.attachments %}
+                <div class="col">
+                    <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}" class="img-fluid" alt="{{ listImage.project.name }}">
+                </div>
+        {% endfor %}
+            </div>
+        </div>
+        {% endif %}
 
     </div>
+    {% if project.attachments|length >= 3 %}
     <div class="mt-4 p-4">
         <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
             <i class="fas fa-chevron-left me-2"></i>
             <span>Retour</span>
         </a>
     </div>
-
+    {% endif %}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('imgGrid') }}
 {% endblock %}
