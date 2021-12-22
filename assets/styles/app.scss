@@ -12,3 +12,17 @@
 .list-group-item-action:hover {
   cursor: pointer;
 }
+.imgGrid {
+  margin:0 auto;
+}
+
+.imgGrid-item {
+  width: 12.5rem; /* 200px */
+}
+.imgGrid-item:hover {
+  cursor: pointer;
+}
+
+.grid-item--gigante {
+  width: 550px;
+}

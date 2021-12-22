@@ -7,7 +7,7 @@
     alt="{{ project.name }}">
 
 
-    <div class="mt-5 mx-auto" style="max-width: 700px;">
+    <div class="mt-5 mx-auto p-3" style="max-width: 700px;">
         <h1>{{ project.name }}</h1>
         <h3> {{ project.client.name }}</h3>
 
@@ -18,23 +18,35 @@
                 <span class="badge bg-secondary rounded">{{ category.name }}</span>
             {% endfor %}
         </div>
-
         {# Vue des images suplémentaires en style grid #}
-        {% if project.attachments %}
-        <div class="container overflow-hidden">
-            <div class="row row-cols-2 g-3">
-        {% for listImage in project.attachments %}
-                <div class="col">
-                    <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}" class="img-fluid" alt="{{ listImage.project.name }}">
-                </div>
-        {% endfor %}
+
+
+        {#  {% if project.attachments %}
+        <div class="row row-cols-4 g-0">
+            {% for listImage in project.attachments %}
+            <div class="col p-0">
+                <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}"
+                     class="img-fluid" alt="{{ listImage.project.name }}">
             </div>
+            {% endfor %}
         </div>
-        {% endif %}
+        {% endif %}#}
 
     </div>
+    {% if project.attachments %}
+        <div class="container-xxl p-0">
+            <div class="imgGrid">
+                {% for listImage in project.attachments %}
+                    <div class="imgGrid-item">
+                        <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}" class="img-fluid" alt="{{ listImage.project.name ~listImage.id}}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
     {% if project.attachments|length >= 3 %}
-    <div class="mt-4 p-4">
+    <div id="return_button" class="mt-4 p-4">
         <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
             <i class="fas fa-chevron-left me-2"></i>
             <span>Retour</span>

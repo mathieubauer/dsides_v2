@@ -3027,6 +3027,13 @@
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.1.8.tgz"
   "version" "5.1.8"
 
+"imagesloaded@^4.1.4":
+  "integrity" "sha512-ltiBVcYpc/TYTF5nolkMNsnREHW+ICvfQ3Yla2Sgr71YFwQ86bDwV9hgpFhFtrGPuwEx5+LqOHIrdXBdoWwwsA=="
+  "resolved" "https://registry.npmjs.org/imagesloaded/-/imagesloaded-4.1.4.tgz"
+  "version" "4.1.4"
+  dependencies:
+    "ev-emitter" "^1.0.0"
+
 "import-local@^3.0.2":
   "integrity" "sha512-vjL3+w0oulAVZ0hBHnxa/Nm5TAurf9YLQJDhqRZyqb+VKGOB6LU8t9H1Nr5CIo16vh9XfJTOoHwU0B71S557gA=="
   "resolved" "https://registry.npmjs.org/import-local/-/import-local-3.0.2.tgz"
@@ -3490,7 +3497,7 @@
   "resolved" "https://registry.npmjs.org/map-obj/-/map-obj-4.3.0.tgz"
   "version" "4.3.0"
 
-"masonry-layout@^4.1.0":
+"masonry-layout@^4.1.0", "masonry-layout@^4.2.2":
   "integrity" "sha512-iGtAlrpHNyxaR19CvKC3npnEcAwszXoyJiI8ARV2ePi7fmYhIud25MHK8Zx4P0LCC4d3TNO9+rFa1KoK1OEOaA=="
   "resolved" "https://registry.npmjs.org/masonry-layout/-/masonry-layout-4.2.2.tgz"
   "version" "4.2.2"
