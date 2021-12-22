@@ -11,4 +11,5 @@ import 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+global.$ = global.jQuery = $;
 
