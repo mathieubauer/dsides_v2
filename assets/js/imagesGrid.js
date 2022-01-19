@@ -6,11 +6,9 @@ jQueryBridget('masonry',Masonry,$);
 
 let $imgGrid = $('.imgGrid').masonry({
         itemSelector: '.imgGrid-item',
-        columnWidth: 200,
-        fitWidth:true,
+        columnWidth: 160,
         transitionDuration: '0.3s',
         stagger: 20,
-        percentPosition: true
 });
 imagesloaded('.imgGrid-item', function () { $imgGrid.masonry('layout') });
 
