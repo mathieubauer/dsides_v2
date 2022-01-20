@@ -41,26 +41,22 @@ class AppFixtures extends Fixture
         $user->setPassword($password);
         $manager->persist($user);
 
-        // clients
+	    // clients
+	    for ($j = 0; $j < 3; $j++) {
+		    $client = new Client();
+		    $client->setName($faker->company());
+		    $manager->persist($client);
+	    }
 
-        $client = new Client();
-        $category = new Category();
-
-        for ($i = 0; $i < 3; $i++) {
-            $client->setName($faker->company());
-            $manager->persist($client);
-        }
-
-        // categories
-
-        for ($i = 0; $i < 3; $i++) {
-            $category->setName($faker->word());
-            $manager->persist($category);
-        }
+	    // categories
+	    for ($k = 0; $k < 6; $k++) {
+		    $category = new Category();
+		    $category->setName($faker->word());
+		    $manager->persist($category);
+	    }
 
         // projects
-
-        for ($i = 0; $i < 10; $i++) {
+	    for ($i = 0; $i < 10; $i++) {
             $project = new Project();
             $project
                 ->setName($faker->words(3, true))

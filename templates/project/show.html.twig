@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}dsides - {{ project.name }}{% endblock %}
+{% block title %}DSides - {{ project.name }}{% endblock %}
 
 {% block body %}
 
@@ -7,25 +7,40 @@
     alt="{{ project.name }}">
 
 
-    <div class="mt-5 mx-auto" style="max-width: 500px;">
+    <div class="mt-5 mx-auto p-3" style="max-width: 900px;">
         <h1>{{ project.name }}</h1>
         <h3> {{ project.client.name }}</h3>
 
         {{ project.content|raw }}
-        <div class="mt-4">
+
+        <div class="my-4">
             {% for category in project.category %}
                 <span class="badge bg-secondary rounded">{{ category.name }}</span>
             {% endfor %}
         </div>
+        {# Vue des images suplémentaires en style grid #}
 
 
-
+        {% if project.attachments %}
+        <div class="row row-cols-md-2 row-cols-sm-1 g-2">
+            {% for listImage in project.attachments %}
+            <div class="col p-0">
+                <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}"
+                     class="img-fluid" alt="{{ listImage.project.name }}">
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
-    <div class="mt-4 p-4">
+    {% if project.attachments|length >= 3 %}
+    <div id="return_button" class="mt-4 p-4">
         <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
             <i class="fas fa-chevron-left me-2"></i>
             <span>Retour</span>
         </a>
     </div>
-
+    {% endif %}
+{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('imgGrid') }}
 {% endblock %}

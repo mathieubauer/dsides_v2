@@ -16,7 +16,7 @@
 
     <div class="container-fluid pt-5 pb-5 bg-black">
         <div class="m-5 pt-5 pb-5">
-            <h1 class="text-center text-white">dsides accompagne les projets de transformation et de design du travail</h1>
+            <h1 class="text-center text-white">DSides accompagne les projets de transformation et de design du travail</h1>
         </div>
     </div>
 
@@ -45,4 +45,8 @@
         </div>
     </div>
 </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('iso') }}
 {% endblock %}
