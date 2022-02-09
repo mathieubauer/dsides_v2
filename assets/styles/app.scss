@@ -14,16 +14,16 @@
 }
 .imgGrid {
   margin:0 auto;
+  max-width: 900px;
 }
 
+.imgGrid-size,
 .imgGrid-item {
-  width: 160px;
+  width: 30%;
+  margin-bottom: 4px;
 }
 
 .imgGrid-item:hover {
   cursor: pointer;
 }
 
-.grid-item--gigante {
-  width: 550px;
-}
