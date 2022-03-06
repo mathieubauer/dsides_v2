@@ -4,7 +4,7 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4 | ^8.0",
+        "php": "^7.4|^8.0",
         "ext-ctype": "*",
         "ext-gd": "*",
         "ext-iconv": "*",
@@ -20,7 +20,6 @@
         "psr/link": "1.0.*",
         "psr/log": "^1.0",
         "sensio/framework-extra-bundle": "^6.1",
-        "swiftmailer/swiftmailer": "^6.3",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "5.3.*",
         "symfony/console": "5.3.*",
@@ -55,6 +54,7 @@
         "vich/uploader-bundle": "^1.18"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "fakerphp/faker": "^1.16",
         "phpstan/phpstan": "^1.0",
