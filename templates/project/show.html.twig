@@ -3,43 +3,46 @@
 
 {% block body %}
 
-    <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('w1600') }}" class="cover_380"
-    alt="{{ project.name }}">
+<img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('w1600') }}" class="cover_380"
+alt="{{ project.name }}">
 
 
-    <div class="mt-5 mx-auto p-3" style="max-width: 900px;">
-        <h1>{{ project.name }}</h1>
-        <h3> {{ project.client.name }}</h3>
+<div class="mt-5 mx-auto p-3" style="max-width: 900px;">
+    <h1>{{ project.name }}</h1>
+    <h3> {{ project.client.name }}</h3>
 
-        {{ project.content|raw }}
+    {{ project.content|raw }}
 
-        <div class="my-4">
-            {% for category in project.category %}
-                <span class="badge bg-secondary rounded">{{ category.name }}</span>
+    <div class="my-4">
+        {% for category in project.category %}
+            <span class="badge bg-secondary rounded">{{ category.name }}</span>
+        {% endfor %}
+    </div>
+
+</div>
+<div class="container-fluid px-2">
+
+    {# Vue des images suplémentaires en style grid #}
+    {% if project.attachments %}
+        <div class="row g-1">
+            {% for images in project.attachments %}
+                <div class="col-lg-4 col-sm-12">
+                    <img src="{{ asset('/uploads/images/projects/attachments/' ~ images.image ) }}" class="img-fluid p-2" alt="{{ images.project.name ~ '_' ~ images.id }}">
+                </div>
             {% endfor %}
         </div>
-        {# Vue des images suplémentaires en style grid #}
-        {% if project.attachments %}
-        <div class="container-xxl p-0">
-            <div class="imgGrid">
-                <div class="imgGrid-size"></div>
-                {% for listImage in project.attachments %}
-                    <div class="imgGrid-item">
-                        <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}" class="img-fluid" alt="{{ listImage.project.name ~listImage.id}}">
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-    </div>
-    {% if project.attachments|length >= 3 %}
-    <div id="return_button" class="mt-4 p-4">
-        <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
-            <i class="fas fa-chevron-left me-2"></i>
-            <span>Retour</span>
-        </a>
-    </div>
     {% endif %}
+</div>
+
+
+{% if project.attachments|length >= 3 %}
+<div id="return_button" class="mt-4 p-4">
+    <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
+        <i class="fas fa-chevron-left me-2"></i>
+        <span>Retour</span>
+    </a>
+</div>
+{% endif %}
 {% endblock %}
 {% block javascripts %}
     {{ encore_entry_script_tags('imgGrid') }}
