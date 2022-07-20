@@ -21,6 +21,7 @@ Encore
      * and one CSS file (e.g. app.scss) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/app.js')
+    .addEntry('glb', './assets/js/global.js')
     .addEntry('iso', './assets/js/isotope.js')
     .addEntry('imgGrid', './assets/js/imagesGrid.js')
 

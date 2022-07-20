@@ -18,32 +18,73 @@ alt="{{ project.name }}">
             <span class="badge bg-secondary rounded">{{ category.name }}</span>
         {% endfor %}
     </div>
-
 </div>
-<div class="container-fluid px-2">
 
-    {# Vue des images suplémentaires en style grid #}
-    {% if project.attachments %}
-        <div class="row g-1">
-            {% for images in project.attachments %}
-                <div class="col-lg-4 col-sm-12">
-                    <img src="{{ asset('/uploads/images/projects/attachments/' ~ images.image ) }}" class="img-fluid p-2" alt="{{ images.project.name ~ '_' ~ images.id }}">
+{% if project.attachments %}
+<div class="container-fluid px-2">
+    {% if project.attachments|length == 1 %}
+    <div class="row">
+        {% for listImage in project.attachments %}
+            <div class="col-md-12 col-sm-12 py-2">
+                <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image )|imagine_filter('w1600') }}"
+                     class="cover_420"
+                     alt="{{ listImage.project.name ~listImage.id}}">
+            </div>
+        {% endfor %}
+    </div>
+    {% elseif project.attachments|length >= 2 and project.attachments|length <= 4 %}
+        <div class="row p-1">
+            {% for listImage in project.attachments %}
+            <div class="col-md-6 col-sm-12 p-0">
+                <img src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image )|imagine_filter('w800') }}"
+                     class="cover_380"
+                     alt="{{ listImage.project.name ~listImage.id}}">
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+
+        <div id="attch_img" class="imgGrid">
+            <div class="imgGrid-size"></div>
+            {% for listImage in project.attachments %}
+                <div class="imgGrid-item">
+                    <img id="attchImage" src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}"
+                         data-bs-toggle="modal"
+                         data-bs-target="#imageAttch"
+                         class="img-fluid"
+                         alt="{{ listImage.project.name ~listImage.id}}">
                 </div>
             {% endfor %}
         </div>
+
+        <div class="modal bg-dark bg-opacity-75" id="imageAttch" aria-label="imageAttchLabel">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body">
+                        <img id="attchImage"
+                             src=""
+                             class="w-100"
+                             alt="image">
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endif %}
 </div>
-
+{% endif %}
 
 {% if project.attachments|length >= 3 %}
-<div id="return_button" class="mt-4 p-4">
-    <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
-        <i class="fas fa-chevron-left me-2"></i>
-        <span>Retour</span>
-    </a>
+<div class="container-fluid">
+    <div id="return_button" class="mt-4 p-4">
+        <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
+            <i class="fas fa-chevron-left me-2"></i>
+            <span>Retour</span>
+        </a>
+    </div>
 </div>
 {% endif %}
 {% endblock %}
 {% block javascripts %}
+    {{ parent() }}
     {{ encore_entry_script_tags('imgGrid') }}
 {% endblock %}
