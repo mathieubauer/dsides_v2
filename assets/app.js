@@ -9,6 +9,6 @@
 import './styles/app.scss';
 import 'bootstrap'
 
-import './bootstrap';
+
 global.$ = global.jQuery = $;
 

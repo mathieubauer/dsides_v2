@@ -42,7 +42,7 @@ class AppFixtures extends Fixture
         $manager->persist($user);
 
 	    // clients
-	    for ($j = 0; $j < 3; $j++) {
+	    for ($j = 0; $j < 5; $j++) {
 		    $client = new Client();
 		    $client->setName($faker->company());
 		    $manager->persist($client);
@@ -53,21 +53,21 @@ class AppFixtures extends Fixture
 		    $category = new Category();
 		    $category->setName($faker->word());
 		    $manager->persist($category);
+	        // projects
+		    for ($i = 0; $i < 6; $i++) {
+	            $project = new Project();
+	            $project
+	                ->setName($faker->words(3, true))
+	                ->setContent($faker->sentence())
+	                ->setDisplayOrder($i)
+	                ->setIsDisplayed($faker->boolean())
+	                ->setClient($client)
+	                ->addCategory($category)
+	                ->setImage('placeholder.jpg');
+	            $manager->persist($project);
+	        }
 	    }
 
-        // projects
-	    for ($i = 0; $i < 10; $i++) {
-            $project = new Project();
-            $project
-                ->setName($faker->words(3, true))
-                ->setContent($faker->sentence())
-                ->setDisplayOrder($i)
-                ->setIsDisplayed($faker->boolean())
-                ->setClient($client)
-                ->addCategory($category)
-                ->setImage('placeholder.jpg');
-            $manager->persist($project);
-        }
 
         $manager->flush();
     }
