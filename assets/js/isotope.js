@@ -1,4 +1,3 @@
-console.log('isotope javascript');
 let jQueryBridget = require('jquery-bridget');
 let Isotope = require('isotope-layout');
 jQueryBridget('isotope', Isotope, $);
@@ -18,3 +17,11 @@ $("#list-filter a").click(function () {
     }
     $grid.isotope(options)
 });
+
+$('#attch_img').isotope({
+    itemSelector: '#imgGrid-item',
+    percentPosition: true,
+    masonry: {
+        columnWidth: 'imgGrid-size'
+    }
+})

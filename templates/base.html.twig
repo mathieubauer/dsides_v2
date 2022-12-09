@@ -11,8 +11,6 @@
 
     {% block stylesheets %}
     <link href="https://fonts.cdnfonts.com/css/joanna-sans-nova" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="{{ asset('/img/favicon_light.jpg') }}" />
     {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -25,6 +23,7 @@
     {% block footer %} {{ include('_footer.html.twig') }} {% endblock %}
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('glb') }}
     {% endblock %}
 </body>
 
