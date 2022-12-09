@@ -1,60 +1,106 @@
 <footer>
-    <div id="contact" class="container-fluid bg-black text-white p-5 f_serif">
-        <div class="row">
-            <div class="col-md-12 pt-5 pb-5 text_footer_punshline">
-                <p>Prêt pour le grand plongeon ? <a href="mailto:alain.germain@dsides.net" class="text-white no_style fw_700">Contactez nous !</a></p>
-            </div>
-            <div class="col-md-12 pt-4">
+    <div id="contact" class="container-fluid bg-black text-white px-5 py-2 f_serif">
+        <div class="row row-cols-1 mt-5 pt-4">
+
+            <div class="col my-5">
                 <div class="row">
-                    <div class="col-md-4 text-start p-3">
-                        <div class="mb-3">
-                            <img src="{{ asset('img/logo_dsides_blanc.png') }}" class="w-50" alt="dsides_logo">
-                        </div>
-                        <address class="text_footer_address">
-                            <p>7 rue René Boulanger<br>
-                                Métro République<br>
-                                75010 Paris - France</p>
-                            <p>contact[at]dsides.net</p>
-                        </address>
+
+                    <div class="col-md-5 text-start px-3 py-2">
+                        <h5 class="lead fs-4 fw-bold">A propos de Dsides</h5>
+                        <p class="lead fs-5 me-5 pe-4">
+                            Dsides est un laboratoire d'innovation, de prospective et d'expérimentation qui traite de l'impact des technologies numériques
+                            sur nos façons de penser, de travailler et d'apprendre.
+                            Il accompagne de grosses entreprises françaises dans les mutations que cela implique.
+                        </p>
+                        <p class="lead fs-4 fw-bold fst-italic">Prêt pour le grand plongeon ?</p>
                     </div>
-                    <div class="col-md-4 p-3">
+
+
+                    <div class="col-md-4 py-2">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div id="list-filter" class="list-group text-start text_footer_list bg-black">
-                                    <a class="list-group-item bg-black" data-filter="*">Tout</a>
-                                    {% for categorie in categories|slice(0,4) %}
+                            <div class="col-md-12">
+                                <h5 class="fs-4 lead fw-bold">Liens Importants</h5>
+                                <ul class="listFooter lead p-0 fs-5 text-secondary_light">
+                                    <li class="p-2"><a href="https://lesept.org" class="link-secondary_light text-decoration-none pb-3" >Le Sept</a></li>
+                                    <li class="p-2"><a href="{# path('app_vimeo') #}" class="link-secondary_light text-decoration-none pb-3" >Qui sommes-nous ?</a></li>
+                                    <li class="p-2"><a href="{{ path('app_vimeo') }}" class="link-secondary_light text-decoration-none pb-3" >Vidéo Dsides</a></li>
+                                    <li class="p-2"><a href="{# path('app_vimeo') #}" class="link-secondary_light text-decoration-none pb-3" >L'équipe</a></li>
+                                    <li class="p-2"><a href="{# path('app_vimeo') #}" class="link-secondary_light text-decoration-none pb-3" >Recrutement</a></li>
+                                    <li class="p-2"><a href="{# path('app_vimeo') #}" class="link-secondary_light text-decoration-none pb-3" >Termes & Condition</a></li>
+                                    <li class="p-2"><a href="{# path('app_vimeo') #}" class="link-secondary_light text-decoration-none pb-3" >Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            {% if categories is defined and categories is not null %}
+                            <div class="col-md-12 py-3">
+                                <h5 class="fs-4 lead py-2 fw-bold">Tags filtres</h5>
+                                <div id="list-filter" class="d-flex flex-row flex-wrap g-2 text-start bg-black">
+                                    <a type="button" class="link-secondary_light bg-black text-decoration-none border border-1 border-white p-2 m-1 rounded-3" data-filter="*">Tout</a>
+                                    {% for categorie in categories %}
                                         {% if categorie.isMenu %}
-                                            <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
+                                            <a type="button" class="link-secondary_light bg-black text-decoration-none border border-1 border-white p-2 m-1 rounded-3" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div id="list-filter" class="list-group text-start text_footer_list bg-black">
-                                    {% for categorie in categories|slice(4) %}
-                                        {% if categorie.isMenu %}
-                                            <a class="list-group-item bg-black" data-filter="{{ '.' ~ categorie.name|slug('_') }}">{{ categorie.name|capitalize }}</a>
-                                        {% endif %}                             
-                                    {% endfor %}
-                                </div>
-                            </div>
+                            {% endif %}
 
                         </div>
 
                     </div>
-                    <div class="col-md-4 p-3 text-center">
-                        <p class="fw_700 fst-italic text_footer_follow">Follow @dsides</p>
-                        <a href="https://instagram.com/dsidescreativeagency?igshid=YmMyMTA2M2Y=" class="text-white" target="_blank">
-                            <i class="fab fa-instagram fa-3x p-2"/></i>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/company/dsides/posts/?feedView=all"
-                            class="text-white" target="_blank">
-                            <i class="fab fa-linkedin fa-3x p-2"></i>
-                        </a>
+                    <div class="col-md-3 row-cols-12 px-0 py-2 text-center">
+
+                        <div class="col mb-5">
+                            <div class="mb-3">
+                                <img src="{{ asset('img/logo_dsides_blanc.png') }}" class="img-fluid w-50" alt="dsides_logo">
+                            </div>
+                            <address class="text_footer_address">
+                                <p>7 rue René Boulanger<br>
+                                    Métro République<br>
+                                    75010 Paris - France</p>
+                                <p>
+                                <a href="mailto:alain.germain@dsides.net" class="text-white no_style">contact[at]dsides.net</a>
+                            </address>
+                        </div>
+                        <div class="col d-inline-flex flex-column align-items-center">
+                            <a href="https://lesept.org" class="mx-auto">
+                                <img src="{{ asset('img/logo-lesept.png') }}" class="rounded-3" width="100" alt="Logo du sept">
+                            </a>
+                            <p class="py-3">
+                                <a href="https://cogx.fr" target="_blank" class="p-1 link-secondary_light text-decoration-none">CogiX</a>
+                                <a href="https://groupe-interface.fr" target="_blank" class="p-1 link-secondary_light text-decoration-none">Interface</a>
+                            </p>
+                        </div>
 
                     </div>
                 </div>
+            </div>
+
+
+
+
+
+            <div class="col">
+
+                <div class="row py-2 border-top">
+                    <div class="col-md-4 d-flex align-items-center justify-content-md-start justify-content-center py-2">
+                        <p class="m-0">© {{ "now"|date("Y") }} Dsides@Work</p>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center py-2">
+                        <a href="{{ path('home') }}" class="link-dark text-decoration-none p-0">
+                            <img src="{{ asset('img/logo_dsides_blanc.png') }}" width="110" alt="dsides_logo">
+                        </a>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-end py-2">
+                        <a href="https://instagram.com/dsidescreativeagency?igshid=YmMyMTA2M2Y" class="text-white">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/dsides/posts/?feedView=all" class="text-white ms-3">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
