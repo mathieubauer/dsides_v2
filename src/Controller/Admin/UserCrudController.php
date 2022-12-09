@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -37,6 +38,7 @@ class UserCrudController extends AbstractCrudController
             
             TextField::new('password')
                 ->hideOnIndex()
+	            ->setFormType(PasswordType::class)
                 ->setPermission('ROLE_ADMIN'),
 
             ArrayField::new('roles')

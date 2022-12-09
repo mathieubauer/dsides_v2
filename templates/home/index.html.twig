@@ -25,7 +25,9 @@
                 <a class="list-group-item list-group-item-action border-0" data-filter="*">Tout</a>
             {% for category in categories %}
                 {% if category.isMenu %}
-                    <a class="list-group-item list-group-item-action border-0" data-filter="{{ '.' ~ category.name|slug('_') }}">{{ category.name|capitalize }}</a>
+                    <a class="list-group-item list-group-item-action border-0" data-filter="{{ '.' ~ category.name|slug('_') }}">
+                        <span class="align-middle">{{ category.name|capitalize }}</span>
+                    </a>
                 {% endif %}
             {% endfor %}
         </div>

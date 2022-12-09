@@ -869,14 +869,24 @@
     "to-fast-properties" "^2.0.0"
 
 "@discoveryjs/json-ext@^0.5.0":
-  "integrity" "sha512-6nFkfkmSeV/rqSaS4oWHgmpnYw194f6hmWF5is6b0J1naJZoiD0NTc9AiUwPHvWsowkjuHErCZT1wa0jg+BLIA=="
-  "resolved" "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.5.tgz"
-  "version" "0.5.5"
+  "integrity" "sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw=="
+  "resolved" "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz"
+  "version" "0.5.7"
 
 "@fortawesome/fontawesome-free@^5.15.4":
   "integrity" "sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg=="
   "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz"
   "version" "5.15.4"
+
+"@hotwired/stimulus-webpack-helpers@^1.0.1":
+  "integrity" "sha512-wa/zupVG0eWxRYJjC1IiPBdt3Lruv0RqGN+/DTMmUWUyMAEB27KXmVY6a8YpUVTM7QwVuaLNGW4EqDgrS2upXQ=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus-webpack-helpers/-/stimulus-webpack-helpers-1.0.1.tgz"
+  "version" "1.0.1"
+
+"@hotwired/stimulus@^3.0", "@hotwired/stimulus@^3.0.1", "@hotwired/stimulus@>= 3.0":
+  "integrity" "sha512-oHsJhgY2cip+K2ED7vKUNd2P+BEswVhrCYcJ802DSsblJFv7mPFVk3cQKvm2vHgHeDVdnj7oOKrBbzp1u8D+KA=="
+  "resolved" "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.0.1.tgz"
+  "version" "3.0.1"
 
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
@@ -909,10 +919,10 @@
     "error-stack-parser" "^2.0.0"
     "string-width" "^2.0.0"
 
-"@popperjs/core@^2.10.1", "@popperjs/core@^2.10.2":
-  "integrity" "sha512-IXf3XA7+XyN7CP9gGh/XB0UxVMlvARGEgGXLubFICsUMGz6Q+DU+i4gGlpOxTjKvXjkJDJC8YdqdKkDj9qZHEQ=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.10.2.tgz"
-  "version" "2.10.2"
+"@popperjs/core@^2.10.2", "@popperjs/core@^2.11.5":
+  "integrity" "sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.5.tgz"
+  "version" "2.11.5"
 
 "@stimulus/core@^2.0.0":
   "integrity" "sha512-ff70GafKtzc8zQ1/cG+UvL06GcifPWovf2wBEdjLMh9xO2GOYURO3y2RYgzIGYUIBefQwyfX2CLfJdZFJrEPTw=="
@@ -938,19 +948,21 @@
   "resolved" "https://registry.npmjs.org/@stimulus/webpack-helpers/-/webpack-helpers-2.0.0.tgz"
   "version" "2.0.0"
 
-"@symfony/stimulus-bridge@^2.0.0":
-  "integrity" "sha512-vuSV1rfNCJ4gILDs3fKIlXvPAL54fRwWljpepqHiPGnHHRiqMydRtMeeqC5EZQ2hKrO9E49iqEJx0xNgAq5tVg=="
-  "resolved" "https://registry.npmjs.org/@symfony/stimulus-bridge/-/stimulus-bridge-2.1.0.tgz"
-  "version" "2.1.0"
+"@symfony/stimulus-bridge@^3.0.0":
+  "integrity" "sha512-eawmVu+tLVkiTz7ewkcsxFvaSZKxFWXmdWxIsxr2jIfQ64PSJg7PIcd7GsPMDxX8sLwg3LGxXfJv5bASL1es+A=="
+  "resolved" "https://registry.npmjs.org/@symfony/stimulus-bridge/-/stimulus-bridge-3.2.1.tgz"
+  "version" "3.2.1"
   dependencies:
+    "@hotwired/stimulus-webpack-helpers" "^1.0.1"
+    "@types/webpack-env" "^1.16.4"
     "acorn" "^8.0.5"
     "loader-utils" "^2.0.0"
     "schema-utils" "^3.0.0"
 
-"@symfony/webpack-encore@^1.0.0":
-  "integrity" "sha512-N00IwDHK88SfnH5GYeXapSpZ6VSZOITL6xeMt9VzP4m9HpBk8s7yGRRJs4quj7VIsO/j3qM8EX/1J4knw7n/Kg=="
-  "resolved" "https://registry.npmjs.org/@symfony/webpack-encore/-/webpack-encore-1.6.1.tgz"
-  "version" "1.6.1"
+"@symfony/webpack-encore@^1.7.0":
+  "integrity" "sha512-ZOsOqaZNP3BSQuISAsyH/Jv5+rDxbM4Wf6IsKo1y5Cm9BFIS2dPLsqDZfMbi6G2HdAHm88JqX/HGwxE73eADEw=="
+  "resolved" "https://registry.npmjs.org/@symfony/webpack-encore/-/webpack-encore-1.8.2.tgz"
+  "version" "1.8.2"
   dependencies:
     "@babel/core" "^7.7.0"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -970,10 +982,11 @@
     "resolve-url-loader" "^3.1.2"
     "semver" "^7.3.2"
     "style-loader" "^2.0.0"
+    "sync-rpc" "^1.3.6"
     "terser-webpack-plugin" "^5.1.1"
     "tmp" "^0.2.1"
     "webpack" "^5.35"
-    "webpack-cli" "^4"
+    "webpack-cli" "^4.9.1"
     "webpack-dev-server" "^4.0.0"
     "yargs-parser" "^20.2.4"
 
@@ -1064,6 +1077,11 @@
   "version" "3.13.1"
   dependencies:
     "source-map" "^0.6.1"
+
+"@types/webpack-env@^1.16.4":
+  "integrity" "sha512-eHSaNYEyxRA5IAG0Ym/yCyf86niZUIF/TpWKofQI/CVfh5HsMEUyfE2kwFxha4ow0s5g0LfISQxpDKjbRDrizw=="
+  "resolved" "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.17.0.tgz"
+  "version" "1.17.0"
 
 "@types/webpack-sources@*":
   "integrity" "sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg=="
@@ -1207,22 +1225,22 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@webpack-cli/configtest@^1.0.4":
-  "integrity" "sha512-cs3XLy+UcxiP6bj0A6u7MLLuwdXJ1c3Dtc0RkKg+wiI1g/Ti1om8+/2hc2A2B60NbBNAbMgyBMHvyymWm/j4wQ=="
-  "resolved" "https://registry.npmjs.org/@webpack-cli/configtest/-/configtest-1.0.4.tgz"
-  "version" "1.0.4"
+"@webpack-cli/configtest@^1.2.0":
+  "integrity" "sha512-4FB8Tj6xyVkyqjj1OaTqCjXYULB9FMkqQ8yGrZjRDrYh0nOE+7Lhs45WioWQQMV+ceFlE368Ukhe6xdvJM9Egg=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/configtest/-/configtest-1.2.0.tgz"
+  "version" "1.2.0"
 
-"@webpack-cli/info@^1.3.0":
-  "integrity" "sha512-ASiVB3t9LOKHs5DyVUcxpraBXDOKubYu/ihHhU+t1UPpxsivg6Od2E2qU4gJCekfEddzRBzHhzA/Acyw/mlK/w=="
-  "resolved" "https://registry.npmjs.org/@webpack-cli/info/-/info-1.3.0.tgz"
-  "version" "1.3.0"
+"@webpack-cli/info@^1.5.0":
+  "integrity" "sha512-e8tSXZpw2hPl2uMJY6fsMswaok5FdlGNRTktvFk2sD8RjH0hE2+XistawJx1vmKteh4NmGmNUrp+Tb2w+udPcQ=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/info/-/info-1.5.0.tgz"
+  "version" "1.5.0"
   dependencies:
     "envinfo" "^7.7.3"
 
-"@webpack-cli/serve@^1.5.2":
-  "integrity" "sha512-vgJ5OLWadI8aKjDlOH3rb+dYyPd2GTZuQC/Tihjct6F9GpXGZINo3Y/IVuZVTM1eDQB+/AOsjPUWH/WySDaXvw=="
-  "resolved" "https://registry.npmjs.org/@webpack-cli/serve/-/serve-1.5.2.tgz"
-  "version" "1.5.2"
+"@webpack-cli/serve@^1.7.0":
+  "integrity" "sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q=="
+  "resolved" "https://registry.npmjs.org/@webpack-cli/serve/-/serve-1.7.0.tgz"
+  "version" "1.7.0"
 
 "@xtuc/ieee754@^1.2.0":
   "integrity" "sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA=="
@@ -1559,10 +1577,10 @@
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
-"bootstrap@^5.1.1":
-  "integrity" "sha512-/jUa4sSuDZWlDLQ1gwQQR8uoYSvLJzDd8m5o6bPKh3asLAMYVZKdRCjb1joUd5WXf0WwCNzd2EjwQQhupou0dA=="
-  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.1.tgz"
-  "version" "5.1.1"
+"bootstrap@^5.1.3":
+  "integrity" "sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-5.1.3.tgz"
+  "version" "5.1.3"
 
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
@@ -1648,9 +1666,9 @@
     "lodash.uniq" "^4.5.0"
 
 "caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001259":
-  "integrity" "sha512-vM8D9Uvp7bHIN0fZ2KQ4wnmYFpJo/Etb4Vwsuc+ka0tfGDHvOPrFm6S/7CCNLSOkAUjenT2HnUPESdOIL91FaA=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001261.tgz"
-  "version" "1.0.30001261"
+  "integrity" "sha512-Y1xk6paHpUXKP/P6YjQv1xqyTbgAP05ycHBcRdQjTcyXlWol868sJJPlmk5ylOekw2BrucWes5jk+LvVd7WZ5Q=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001331.tgz"
+  "version" "1.0.30001331"
 
 "caseless@~0.12.0":
   "integrity" "sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw="
@@ -1775,15 +1793,10 @@
   "resolved" "https://registry.npmjs.org/colord/-/colord-2.8.0.tgz"
   "version" "2.8.0"
 
-"colorette@^1.2.1":
-  "integrity" "sha512-Y2oEozpomLn7Q3HFP7dpww7AtMJplbM9lGZP6RDfHqmbeRjiwRg4n6VM6j4KLmRke85uWEI7JqF17f3pqdRA0g=="
-  "resolved" "https://registry.npmjs.org/colorette/-/colorette-1.4.0.tgz"
-  "version" "1.4.0"
-
-"colorette@^2.0.10":
-  "integrity" "sha512-lHID0PU+NtFzeNCwTL6JzUKdb6kDpyEjrwTD1H0cDZswTbsjLh2wTV2Eo2sNZLc0oSg0a5W1AI4Nj7bX4iIdjA=="
-  "resolved" "https://registry.npmjs.org/colorette/-/colorette-2.0.12.tgz"
-  "version" "2.0.12"
+"colorette@^2.0.10", "colorette@^2.0.14":
+  "integrity" "sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ=="
+  "resolved" "https://registry.npmjs.org/colorette/-/colorette-2.0.19.tgz"
+  "version" "2.0.19"
 
 "combined-stream@^1.0.6", "combined-stream@~1.0.6":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
@@ -2728,6 +2741,11 @@
     "has" "^1.0.3"
     "has-symbols" "^1.0.1"
 
+"get-port@^3.1.0":
+  "integrity" "sha512-x5UJKlgeUiNT8nyo/AcnwLnZuZNcSjSw0kogRB+Whd1fjjFq4B1hySFxSFWWSn4mIBzg3sRNUDFYc4g5gjPoLg=="
+  "resolved" "https://registry.npmjs.org/get-port/-/get-port-3.2.0.tgz"
+  "version" "3.2.0"
+
 "get-size@^2.0.0", "get-size@^2.0.2":
   "integrity" "sha512-lXNzT/h/dTjTxRbm9BXb+SGxxzkm97h/PCIKtlN/CBCxxmkkIVV21udumMS93MuVTDX583gqc94v3RjuHmI+2Q=="
   "resolved" "https://registry.npmjs.org/get-size/-/get-size-2.0.3.tgz"
@@ -3035,9 +3053,9 @@
     "ev-emitter" "^1.0.0"
 
 "import-local@^3.0.2":
-  "integrity" "sha512-vjL3+w0oulAVZ0hBHnxa/Nm5TAurf9YLQJDhqRZyqb+VKGOB6LU8t9H1Nr5CIo16vh9XfJTOoHwU0B71S557gA=="
-  "resolved" "https://registry.npmjs.org/import-local/-/import-local-3.0.2.tgz"
-  "version" "3.0.2"
+  "integrity" "sha512-ASB07uLtnDs1o6EHjKpX34BKYDSqnFerfTOJL2HvMqF70LnxpjkzDB8J44oT9pu4AMPkQwf8jl6szgvNd2tRIg=="
+  "resolved" "https://registry.npmjs.org/import-local/-/import-local-3.1.0.tgz"
+  "version" "3.1.0"
   dependencies:
     "pkg-dir" "^4.2.0"
     "resolve-cwd" "^3.0.0"
@@ -3262,7 +3280,7 @@
   "version" "2.0.0"
 
 "isobject@^3.0.1":
-  "integrity" "sha1-TkMekrEalzFjaqH5yNHMvP2reN8="
+  "integrity" "sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg=="
   "resolved" "https://registry.npmjs.org/isobject/-/isobject-3.0.1.tgz"
   "version" "3.0.1"
 
@@ -5147,7 +5165,7 @@
   dependencies:
     "readable-stream" "^2.0.1"
 
-"stimulus@^2.0", "stimulus@^2.0.0":
+"stimulus@^2.0.0":
   "integrity" "sha512-xipy7BS5TVpg4fX6S8LhrYZp7cmHGjmk09WSAiVx1gF5S5g43IWsuetfUhIk8HfHUG+4MQ9nY0FQz4dRFLs/8w=="
   "resolved" "https://registry.npmjs.org/stimulus/-/stimulus-2.0.0.tgz"
   "version" "2.0.0"
@@ -5325,6 +5343,13 @@
     "csso" "^4.2.0"
     "nanocolors" "^0.1.12"
     "stable" "^0.1.8"
+
+"sync-rpc@^1.3.6":
+  "integrity" "sha512-J8jTXuZzRlvU7HemDgHi3pGnh/rkoqR/OZSjhTyyZrEkkYQbk7Z33AXp37mkPfPpfdOuj7Ex3H/TJM1z48uPQw=="
+  "resolved" "https://registry.npmjs.org/sync-rpc/-/sync-rpc-1.3.6.tgz"
+  "version" "1.3.6"
+  dependencies:
+    "get-port" "^3.1.0"
 
 "tapable@^2.1.1", "tapable@^2.2.0":
   "integrity" "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="
@@ -5541,11 +5566,6 @@
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   "version" "8.3.2"
 
-"v8-compile-cache@^2.2.0":
-  "integrity" "sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA=="
-  "resolved" "https://registry.npmjs.org/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz"
-  "version" "2.3.0"
-
 "validate-npm-package-license@^3.0.1":
   "integrity" "sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew=="
   "resolved" "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz"
@@ -5588,23 +5608,22 @@
   dependencies:
     "minimalistic-assert" "^1.0.0"
 
-"webpack-cli@^4", "webpack-cli@4.x.x":
-  "integrity" "sha512-+iBSWsX16uVna5aAYN6/wjhJy1q/GKk4KjKvfg90/6hykCTSgozbfz5iRgDTSJt/LgSbYxdBX3KBHeobIs+ZEw=="
-  "resolved" "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.8.0.tgz"
-  "version" "4.8.0"
+"webpack-cli@^4.9.1", "webpack-cli@4.x.x":
+  "integrity" "sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w=="
+  "resolved" "https://registry.npmjs.org/webpack-cli/-/webpack-cli-4.10.0.tgz"
+  "version" "4.10.0"
   dependencies:
     "@discoveryjs/json-ext" "^0.5.0"
-    "@webpack-cli/configtest" "^1.0.4"
-    "@webpack-cli/info" "^1.3.0"
-    "@webpack-cli/serve" "^1.5.2"
-    "colorette" "^1.2.1"
+    "@webpack-cli/configtest" "^1.2.0"
+    "@webpack-cli/info" "^1.5.0"
+    "@webpack-cli/serve" "^1.7.0"
+    "colorette" "^2.0.14"
     "commander" "^7.0.0"
-    "execa" "^5.0.0"
+    "cross-spawn" "^7.0.3"
     "fastest-levenshtein" "^1.0.12"
     "import-local" "^3.0.2"
     "interpret" "^2.2.0"
     "rechoir" "^0.7.0"
-    "v8-compile-cache" "^2.2.0"
     "webpack-merge" "^5.7.3"
 
 "webpack-dev-middleware@^5.2.1":

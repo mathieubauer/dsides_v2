@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Attachment;
 use App\Entity\Project;
 use App\Form\AttachmentType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -108,7 +109,8 @@ class ProjectCrudController extends AbstractCrudController
                 ->setFormTypeOption('by_reference', false)
 	            ->setEntryIsComplex(true)
                 ->setEntryType(AttachmentType::class),
-            CollectionField::new('attachments', 'Ajouter')
+
+            CollectionField::new('attachments', 'Image Complémentaire')
                ->setTemplatePath('/project/attachments/imagesCollection.html.twig')
                ->onlyOnDetail(),
 
