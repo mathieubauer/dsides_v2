@@ -10,7 +10,7 @@ let $imgGrid = $('.imgGrid').masonry({
         columnWidth: grid_sizer,
         transitionDuration: '0.3s',
         percentPosition: true,
-        gutter:0
+        gutter: 0
 });
 
 imagesloaded('.imgGrid-item', function () { $imgGrid.masonry('layout') });

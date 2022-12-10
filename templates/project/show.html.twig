@@ -43,11 +43,10 @@ alt="{{ project.name }}">
             {% endfor %}
         </div>
     {% else %}
-
         <div id="attch_img" class="imgGrid">
-            <div class="imgGrid-size"></div>
+            <div class="imgGrid-size col-md-4"></div>
             {% for listImage in project.attachments %}
-                <div class="imgGrid-item">
+                <div class="imgGrid-item col-md-4">
                     <img id="attchImage" src="{{ asset('/uploads/images/projects/attachments/' ~ listImage.image ) }}"
                          data-bs-toggle="modal"
                          data-bs-target="#imageAttch"

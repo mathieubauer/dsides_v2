@@ -18,16 +18,12 @@
 .list-group-item-action:hover {
   cursor: pointer;
 }
-.imgGrid {
-  margin:0 auto;
-  max-width: 900px;
-}
 
 .imgGrid-size,
 .imgGrid-item {
-  width: 30%;
-  margin-bottom: 4px;
+  width: 25%;
 }
+
 
 .imgGrid-item:hover {
   cursor: pointer;
