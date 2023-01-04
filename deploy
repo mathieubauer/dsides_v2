@@ -1,5 +1,5 @@
 #!/bin/sh
-# npm run build
+npm run build
 
 # preprod
 # rsync -av ./ kb240_learn@makelearn.fr:~/sites/preprod-dsides.makelearn.fr --include=public/.htaccess --include=public/build --exclude-from=.gitignore
