@@ -30,4 +30,20 @@ class HomeController extends AbstractController
             'categories' => $category
         ]);
     }
+
+	#[Route('/confidentiality', name:'app_privacy_confidentiality')]
+	public function privacyConfidentiality(): Response
+	{
+		return $this->render('home/privacyConfidentiality.html.twig',[
+			'title' => 'Politique de confidentialité'
+		]);
+	}
+
+	#[Route('/teams', name: 'app_teams_dsides')]
+	public function teamsDsides(): Response
+	{
+		return $this->render('home/teams.html.twig', [
+			'title' => "L'équipe Dsides"
+		]);
+	}
 }
