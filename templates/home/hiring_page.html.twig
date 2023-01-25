@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block titel %}{{ parent() }} | {{ title }}{% endblock %}
+{% block body %}
+	<div class='container mx-auto'>
+		<h1 class='text-center my-5'>{{ title }}</h1>
+		<div class='d-flex flex-column align-items-center justify-content-center py-5'>
+			<div class='col-md-6'>
+				<p>Pour le moment nos besoins ne se faisant pas resentir nous vous tennons au courant des
+				   prochaines session de recurtement
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
