@@ -25,9 +25,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-
         $routeBuilder = $this->urlGenerator->setController(ProjectCrudController::class);
-
         return $this->redirect($routeBuilder->generateUrl());
     }
 
@@ -35,8 +33,7 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             ->setTitle('dsides')
-            ->setFaviconPath('/img/favicon_dark.jpg')
-            ;
+            ->setFaviconPath('/img/favicon_dark.jpg');
     }
 
     public function configureMenuItems(): iterable
