@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Category;
 use App\Entity\Project;
 use App\Repository\ProjectRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,14 +17,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProjectController extends AbstractController
 {
+	public function __construct(private readonly EntityManagerInterface $em) {}
 
-    /**
+	/**
      * @Route("/project/{id}", name="project_show", requirements={"id":"\d+"})
      * @Route("/{slug}", name="project_show_slug")
      */
-    public function show(Project $project, Request $request): Response
+    public function show(Project $project): Response
     {
-        $category = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $category = $this->em->getRepository(Category::class)->findAll();
 
         return $this->render('project/show.html.twig', [
             'project' => $project,
@@ -33,18 +36,16 @@ class ProjectController extends AbstractController
     /**
      * @Route("/project/reorder", name="reorder")
      */
-    public function reorderModules(Request $request, ProjectRepository $projectRepository): RedirectResponse
+    public function reorderModules(ManagerRegistry $manager, ProjectRepository $projectRepository):
+    RedirectResponse
     {
-
         // TODO: seulement pour admin
         // TODO: confirmation
-
         $projects = $projectRepository->findBy(
             [],
             ['displayOrder' => 'ASC']
         );
-
-        $em = $this->getDoctrine()->getManager();
+        $em = $manager->getManager();
         $i = 1;
         foreach ($projects as $project) {
             $project->setDisplayOrder($i);
@@ -52,7 +53,6 @@ class ProjectController extends AbstractController
             $i++;
         }
         $em->flush();
-
         return $this->redirectToRoute('admin');
     }
 
