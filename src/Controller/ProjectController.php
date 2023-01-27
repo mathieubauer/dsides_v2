@@ -14,15 +14,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
+#[Route('/project')]
 class ProjectController extends AbstractController
 {
 	public function __construct(private readonly EntityManagerInterface $em) {}
 
 	/**
-     * @Route("/project/{id}", name="project_show", requirements={"id":"\d+"})
+     * @Route("/{id}", name="project_show", requirements={"id":"\d+"})
      * @Route("/{slug}", name="project_show_slug")
      */
+	#[Route('/{id}', name: "project_show",requirements: ['id' => '\d+'] )]
+	#[Route('/{slug}', name: "project_show_slug",requirements: ['slug' => '[a-zA-Z]+'] )]
     public function show(Project $project): Response
     {
         $category = $this->em->getRepository(Category::class)->findAll();
@@ -34,7 +36,7 @@ class ProjectController extends AbstractController
     }
 
     /**
-     * @Route("/project/reorder", name="reorder")
+     * @Route("/reorder", name="reorder")
      */
     public function reorderModules(ManagerRegistry $manager, ProjectRepository $projectRepository):
     RedirectResponse
