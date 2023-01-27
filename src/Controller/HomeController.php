@@ -41,12 +41,4 @@ class HomeController extends AbstractController
 			'title' => 'Politique de confidentialité'
 		]);
 	}
-
-	#[Route('/teams', name: 'app_teams_dsides')]
-	public function teamsDsides(): Response
-	{
-		return $this->render('home/teams.html.twig', [
-			'title' => "L'équipe Dsides"
-		]);
-	}
 }
