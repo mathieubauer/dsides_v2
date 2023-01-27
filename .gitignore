@@ -1,7 +1,7 @@
 /.idea
 /.DS_Store
 */DS_Store
-
+.DS_Store
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -37,3 +37,4 @@ yarn-error.log
 !/public/uploads/images/projects/placeholder.jpg
 
 /.env
+
