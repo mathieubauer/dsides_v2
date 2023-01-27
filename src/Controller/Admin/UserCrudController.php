@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -27,20 +28,24 @@ class UserCrudController extends AbstractCrudController
             TextField::new('lastName'),
             TextEditorField::new('content'),
 
-            // TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
-            // ImageField::new('image')->setBasePath('/uploads/images/projects')->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
+            // TextField::new('imageFile')
+            //      ->setFormType(VichImageType::class)
+            //      ->hideOnIndex(),
+            // ImageField::new('image')
+            //      ->setBasePath('/uploads/images/projects')
+            //      ->setUploadDir('public/uploads/images/projects')->onlyOnIndex()->setSortable(false),
 
-            AssociationField::new('projects')->setFormTypeOptions(['choice_label' => 'name']),
+            AssociationField::new('projects')
+                     ->setFormTypeOptions(['choice_label' => 'name']),
 
             TextField::new('slug')
-                ->setPermission('ROLE_ADMIN'),
-            
+                     ->setPermission('ROLE_ADMIN'),
             TextField::new('password')
-                ->hideOnIndex()
-                ->setPermission('ROLE_ADMIN'),
-
+                     ->hideOnIndex()
+                     ->setFormType(PasswordType::class)
+                     ->setPermission('ROLE_ADMIN'),
             ArrayField::new('roles')
-                ->setPermission('ROLE_ADMIN'),
+                      ->setPermission('ROLE_ADMIN'),
         ];
     }
 }

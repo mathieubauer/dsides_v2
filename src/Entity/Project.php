@@ -113,7 +113,7 @@ class Project
     private $users;
 
     /**
-     * @ORM\OneToMany(targetEntity=Attachment::class, mappedBy="project",cascade={"persist"})
+     * @ORM\OneToMany(targetEntity=Attachment::class, mappedBy="project", orphanRemoval=true, cascade={"persist"})
      */
     private $attachments;
 

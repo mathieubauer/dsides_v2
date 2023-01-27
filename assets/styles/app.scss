@@ -1,29 +1,30 @@
-@import "_colors";
+@import "_colors.scss";
+@import "_fonts_JoannaNova.scss";
+@import "_fonts.scss";
+@import "_cards.scss";
+@import "_buttons.scss";
+@import "_layout.scss";
 
-// the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
-@import "_fonts_JoannaNova";
-@import "_fonts";
-@import "_cards";
-@import "_buttons";
-@import "_layout";
+.listFooter {
+  list-style-type: ">";
+}
 
 .list-group-item-action:hover {
   cursor: pointer;
 }
-.imgGrid {
-  margin:0 auto;
-  max-width: 900px;
-}
 
 .imgGrid-size,
 .imgGrid-item {
-  width: 30%;
-  margin-bottom: 4px;
+  width: 25%;
 }
+
 
 .imgGrid-item:hover {
   cursor: pointer;
 }
-
