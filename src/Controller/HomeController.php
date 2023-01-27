@@ -4,19 +4,22 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Project;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    /**
+	public function __construct(private readonly EntityManagerInterface $em) {}
+
+	/**
      * @Route("/", name="home")
      */
     public function index(): Response
     {
-        $repo = $this->getDoctrine()->getRepository(Project::class);
-        $repoCat = $this->getDoctrine()->getRepository(Category::class);
+        $repo = $this->em->getRepository(Project::class);
+        $repoCat = $this->em->getRepository(Category::class);
 
         $projects = $repo->findBy(
             [],

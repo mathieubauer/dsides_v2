@@ -19,15 +19,11 @@ class CategoryCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            
             TextField::new('name', 'Nom'),
-
             TextField::new('slug')
                 ->setPermission('ROLE_ADMIN'),
-
             ColorField::new('color', 'Couleur')
                 ->setPermission('ROLE_ADMIN'),
-
             BooleanField::new('isMenu', 'Affiché ?')
 
         ];

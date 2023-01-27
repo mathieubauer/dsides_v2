@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Attachment;
 use App\Entity\Project;
 use App\Form\AttachmentType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -10,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -154,7 +152,8 @@ class ProjectCrudController extends AbstractCrudController
 
 	public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-        $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
+        $projects = $entityManager->getRepository(Project::class)->findAll();
+
         // TODO: reorder avant
 
         $entityInstance
