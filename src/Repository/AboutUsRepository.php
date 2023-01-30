@@ -21,7 +21,7 @@ class AboutUsRepository extends ServiceEntityRepository
         parent::__construct($registry, AboutUs::class);
     }
 
-    public function save(AboutUs $entity, bool $flush = false): void
+    public function add(AboutUs $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
