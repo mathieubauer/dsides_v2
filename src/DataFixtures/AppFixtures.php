@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Client;
 use App\Entity\Project;
 use App\Entity\User;
+use App\Factory\UserFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -27,19 +28,7 @@ class AppFixtures extends Fixture
         $faker = Factory::create('fr_FR');
 
         // users
-
-        $user = new User();
-        $user->setEmail('user@demo.fr');
-        $password = $this->encoder->hashPassword($user, 'user');
-        $user->setPassword($password);
-        $manager->persist($user);
-
-        $user = new User();
-        $user->setEmail('admin@demo.fr');
-        $user->setRoles(array('ROLE_USER', 'ROLE_ADMIN'));
-        $password = $this->encoder->hashPassword($user, 'admin');
-        $user->setPassword($password);
-        $manager->persist($user);
+	    UserFactory::createMany(10);
 
 	    // clients
 	    for ($j = 0; $j < 5; $j++) {
