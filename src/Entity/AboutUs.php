@@ -27,6 +27,11 @@ class AboutUs
      */
     private $is_published;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $reference_page;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class AboutUs
     public function setIsPublished(bool $is_published): self
     {
         $this->is_published = $is_published;
+
+        return $this;
+    }
+
+    public function getReferencePage(): ?string
+    {
+        return $this->reference_page;
+    }
+
+    public function setReferencePage(?string $reference_page): self
+    {
+        $this->reference_page = $reference_page;
 
         return $this;
     }
