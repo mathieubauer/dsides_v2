@@ -6,6 +6,7 @@
 parameters:
     app.path.project_images: /uploads/images/projects
     app.path.attchments_image: /uploads/images/projects/attachments
+    app.path.teams_image : /uploads/images/teams
     app.vimeo.client_id : '%env(CLIENT_ID)%'
     app.vimeo.client.secret: '%env(CLIENT_SECRET)%'
     app.vimeo.access.public: '%env(PUBLIC_TOKEN)%'
