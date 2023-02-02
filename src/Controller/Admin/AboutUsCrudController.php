@@ -31,7 +31,9 @@ class AboutUsCrudController extends AbstractCrudController
     {
         return [
             TextEditorField::new('content', 'Contenu')
-                           ->setFormType(CKEditorType::class),
+                           ->setFormType(CKEditorType::class)
+                           ->setHelp('Attention, si vous passez à la ligne dans votre texte, il créera un nouveau bloc de texte. 
+Si vous voulez passer à                     la ligne sans saut de ligne faite manipulation suivante : Shift+Entrer'),
             TextField::new('reference_page', 'Page de référence'),
             BooleanField::new('is_published', 'à publier')
         ];

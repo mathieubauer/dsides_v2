@@ -18,7 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class DashboardController extends AbstractDashboardController
 {
-	public function __construct(private AdminUrlGenerator $urlGenerator) {}
+	public function __construct(private readonly AdminUrlGenerator $urlGenerator) {}
 
 	/**
      * @Route("/admin", name="admin")
