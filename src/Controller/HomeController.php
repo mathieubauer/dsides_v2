@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\AboutUs;
 use App\Entity\Category;
 use App\Entity\Project;
 use Doctrine\ORM\EntityManagerInterface;
@@ -37,8 +38,11 @@ class HomeController extends AbstractController
 	#[Route('/confidentiality', name:'app_privacy_confidentiality')]
 	public function privacyConfidentiality(): Response
 	{
+		$text = $this->em->getRepository(AboutUs::class);
+		$confidential = $text->findOneBy(['reference_page' => 'confidential']);
 		return $this->render('home/privacyConfidentiality.html.twig',[
-			'title' => 'Politique de confidentialité'
+			'title' => 'Politique de confidentialité',
+			'confidential' => $confidential
 		]);
 	}
 }
