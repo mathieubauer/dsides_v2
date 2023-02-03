@@ -14,6 +14,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
  * @Vich\Uploadable
+ * @ORM\Cache(usage="NONSTRICT_READ_WRITE", region="Project_cache_entity")
  */
 class Project
 {
