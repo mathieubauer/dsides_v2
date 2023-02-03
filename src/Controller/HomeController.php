@@ -3,38 +3,32 @@
 namespace App\Controller;
 
 use App\Entity\AboutUs;
-use App\Entity\Category;
-use App\Entity\Project;
-use Doctrine\DBAL\Connection;
+use App\Repository\CategoryRepository;
+use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Cache\Adapter\DoctrineDbalAdapter;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-	public function __construct(private readonly EntityManagerInterface $em) {}
+	public function __construct(
+		private readonly EntityManagerInterface $em,
+	) {}
 
 	/**
 	 * @Route("/", name="home")
+	 * @throws \Psr\Cache\InvalidArgumentException
 	 */
-    public function index(): Response
+    public function index( ProjectRepository $repo, CategoryRepository $repoCat ): Response
     {
-        $repo = $this->em->getRepository(Project::class);
-        $repoCat = $this->em->getRepository(Category::class);
-
-        $projects = $repo->findBy(
+		$projects = $repo->findBy(
 				[],
 				['displayOrder' => 'ASC']
 			);
-
-        $category = $repoCat->findAll();
-
-
         return $this->render('home/index.html.twig', [
             'projects' => $projects,
-            'categories' => $category
+            'categories' => $repoCat->findAll()
         ]);
     }
 
