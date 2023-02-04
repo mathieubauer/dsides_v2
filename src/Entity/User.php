@@ -9,9 +9,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinTable;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use \Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @Vich\Uploadable
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -50,8 +53,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
      */
     private $image;
+
+	/**
+	 * @Vich\UploadableField(mapping="teams_image", fileNameProperty="image")
+	 * @var File
+	 */
+	private $imageFile;
 
     /**
      * @ORM\ManyToMany(targetEntity=Project::class, inversedBy="users")
@@ -68,6 +78,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -203,7 +218,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
+
+	public function getImageFile()
+	{
+		return $this->imageFile;
+	}
+
+	/**
+	 * @param \Symfony\Component\HttpFoundation\File\File|null $imageFile
+	 */
+	public function setImageFile(File $imageFile = null): void
+	{
+		$this->imageFile = $imageFile;
+		if ($imageFile) {
+			$this->updatedAt = new \DateTime('now');
+		}
+
+	}
+
+
+	/**
      * @return Collection|Project[]
      */
     public function getProjects(): Collection
@@ -251,15 +285,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
-    public function setId($id)
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
-        $this->id = $id;
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
+
+	public function getFullname(): string
+	{
+		return $this->getFirstName().' '.$this->getLastName();
+	}
 }

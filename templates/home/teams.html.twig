@@ -2,9 +2,75 @@
 {% block title %}{{ parent() }} | {{ title }}{% endblock %}
 
 {% block body %}
-	<div class='container'>
-		<h1>{{ title }}</h1>
-	</div>
+<div class='container'>
+	<h1>{{ title }}</h1>
+	<section class="container mb-5 py-lg-3 py-xl-4 py-xxl-5">
+
+		<div class='row g-3 row-cols-1  row-cols-sm-1 row-cols-md-3 row-cols-xl-4 row-cols-xxl-4'>
+			<!-- Team classique --->
+			<div class="col">
+				<div class="card border-0 bg-transparent mx-auto" style="width: 12rem;">
+					<img src="{{ asset('uploads/images/portraitTest.jpg') }}" class="card-img-top rounded-4"
+					     alt="..." />
+					<div class="card-body text-center">
+						<h6 class="card-title">Dupont Marie - 1</h6>
+						<p class="card-text">UX-Designer</p>
+					</div>
+				</div>
+			</div>
+			<!-- Team Overlay 1 --->
+			<div class='col'>
+				<div class="card border-0 bg-transparent text-bg-dark mx-auto" style="width: 13rem;">
+					<img src="{{ asset('uploads/images/portraitTest.jpg') }}" class="card-img rounded-5" alt="...">
+					<div class="card-img-overlay d-flex flex-column justify-content-end align-items-center text-white">
+						<h6 class="card-title">Dupont Marie - 2</h6>
+						<p class="card-text">UX-Designer</p>
+					</div>
+				</div>
+			</div>
+			<!-- Team Overlay 2 --->
+			<div class='col'>
+				<div class="card border-0 bg-transparent text-bg-dark mx-auto" style="width: 20rem;">
+					<img src="{{ asset('uploads/images/portraitTest.jpg') }}" class="card-img rounded-5" alt="...">
+					<div class="card-img-overlay d-inline-flex flex-column justify-content-end text-white">
+						<span class="card-title bg-black rounded-2 text-start p-1" style='width: 8.5rem;
+'>UX-Designer - 3</span>
+						<p class="card-text">
+							<b>Dupont Marie</b> card with supporting text below as a natural
+							lead-in to additional content.
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- Team circle --->
+			<div class="col">
+				<div class="card border-0 bg-transparent mx-auto" style="width: 16rem;">
+					<img src="{{ asset('uploads/images/portraitTest1.jpg') }}" class="card-img-top rounded-circle"
+					     alt="..." />
+					<div class="card-body text-center">
+						<h6 class="card-title">Smith Doe - 4</h6>
+						<p class="card-text">UX-Designer</p>
+					</div>
+				</div>
+			</div>
+			<!-- Team Card --->
+		</div>
+		<div class="card mb-3" style="max-width: 540px;">
+				  <div class="row g-0">
+				    <div class="col-md-4">
+				      <img src="{{ asset('uploads/images/portraitTest.jpg') }}" class="img-fluid rounded-start" alt="...">
+				    </div>
+				    <div class="col-md-8 d-flex align-items-center justify-content-center">
+				      <div class="card-body">
+				        <h5 class="card-title">UX-Designer - 5</h5>
+				        <p class="card-text"><b>Dupont Marie</b> card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+	</section>
+</div>
 {% endblock %}
 
 

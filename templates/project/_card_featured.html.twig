@@ -1,4 +1,4 @@
-<div class="position-relative">
+<div role='button' class="position-relative">
 
     <div class="scrim cover_160 position-absolute bottom-0 start-50 translate-middle-x"></div>
 
@@ -18,7 +18,7 @@
 
         <div class="">
             {% for category in project.category %}
-            <div class="badge bg-white text_color_87 rounded-pill mx-1">{{ category.name }}</div>
+            <div class="badge bg-black text-white me-1">{{ category.name }}</div>
             {% endfor %}
         </div>
 
@@ -62,7 +62,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal_{{ project.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
             <img src="{{ vich_uploader_asset(project, 'imageFile') | imagine_filter('w1600') }}" class="cover_380"
