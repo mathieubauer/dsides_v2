@@ -8,6 +8,9 @@ body {
 .f_serif {
     font-family: $font_titles;
 }
+ul, li {
+    font-family: $font_main;
+}
 
 h1, h2, h3, h4 {
     font-family: $font_titles;
