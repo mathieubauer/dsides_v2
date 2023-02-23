@@ -13,7 +13,7 @@
     <div class="position-absolute bottom-0 start-0 p-4 w-100 d-flex align-items-center justify-content-between">
 
         <div class="text-white text_shadow fs_1650">
-            <span class=" fw_700 f_serif">{{ project.client.name }}</span> - {{ project.name }}
+            <span class="fw_700 f_serif">{{ project.client.name }}</span> - {{ project.name }}
         </div>
 
         <div class="">
@@ -72,9 +72,7 @@
                 <div class="mx-auto my-5" style="max-width: 800px;">
                     <h1>{{ project.name }}</h1>
                     <h3> {{ project.client.name }}</h3>
-
-                    {{ project.content|raw }}
-
+                    <p class='f_text_serif'>{{ project.content|raw }}</p>
                     <div class="mt-4">
                         {% for category in project.category %}
                         <span class="badge bg-secondary rounded-pill">{{ category.name }}</span>
@@ -87,7 +85,7 @@
                 <button type="button" class="btn btn_material hidden_link px-0" data-bs-dismiss="modal"
                     aria-label="Close">
                     <i class="fas fa-chevron-left me-2"></i>
-                    <span>Retour</span>
+                    <span class='f_serif'>Retour</span>
                 </button>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

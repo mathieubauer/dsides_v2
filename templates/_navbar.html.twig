@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarBurger">
-            <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto text_small_responsive  mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link text-black" aria-current="page" href="{{ path('home') }}">Home</a>
                 </li>
@@ -25,9 +25,9 @@
                 </li>
             </ul>
             {% if app.request.attributes.get('id') %}
-                <a href="{{ path('home') }}" class="btn btn_material ms-auto px-0 hidden_link">
-                    <i class="fa-solid fa-chevron-left me-2"></i>
-                    <span>Retour</span>
+                <a href="{{ path('home') }}" class=" ms-auto px-0 hidden_link">
+                    <i class="fa-solid fa-chevron-left me-1"></i>
+                    <span class='font_main text_extra_small'>Retour</span>
                 </a>
             {% endif %}
 
