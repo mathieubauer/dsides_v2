@@ -7,15 +7,13 @@
 alt="{{ project.name }}">
 
 
-<div class="mt-5 mx-auto p-3" style="max-width: 900px;">
+<div id='content_shaw_project' class="mt-5 mx-auto p-3 f_text_serif" style="max-width: 900px;">
     <h1>{{ project.name }}</h1>
     <h3> {{ project.client.name }}</h3>
-
     {{ project.content|raw }}
-
     <div class="my-4">
         {% for category in project.category %}
-            <span class="badge bg-secondary rounded">{{ category.name }}</span>
+            <span class="badge bg-secondary rounded f_text_serif">{{ category.name }}</span>
         {% endfor %}
     </div>
 </div>
@@ -75,9 +73,9 @@ alt="{{ project.name }}">
 {% if project.attachments|length >= 3 %}
 <div class="container-fluid">
     <div id="return_button" class="mt-4 p-4">
-        <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
-            <i class="fas fa-chevron-left me-2"></i>
-            <span>Retour</span>
+        <a href="{{ path('home') }}" class="px-0 hidden_link">
+            <i class="fas fa-chevron-left me-1"></i>
+            <span class='f_serif'>Retour</span>
         </a>
     </div>
 </div>

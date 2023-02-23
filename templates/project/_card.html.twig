@@ -13,11 +13,11 @@
     </div>
     <div class="card-body d-flex flex-column pb-4 text-white">
         <div class="mb-2 lh_12 text-black">
-            <span class="fw_700 f_serif">{{ project.client.name }}</span> {{ project.name }}
+            <span class="fw_700 f_serif">{{ project.client.name }}</span> <span class='f_text_serif'>{{ project.name }}</span>
         </div>
         <div class="mt-auto">
             {% for category in project.category %}
-            <div class="badge bg-black text-white me-1">{{ category.name }}</div>
+            <div class="badge bg-black text-white me-1 font_main">{{ category.name }}</div>
             {% endfor %}
         </div>
     </div>
