@@ -21,7 +21,7 @@ class DashboardController extends AbstractDashboardController
 	public function __construct(private readonly AdminUrlGenerator $urlGenerator) {}
 
 	/**
-     * @Route("/admin", name="admin")
+     * @Route("/dsidesadmin", name="admin")
      * @IsGranted("ROLE_EDITOR")
      */
     public function index(): Response
