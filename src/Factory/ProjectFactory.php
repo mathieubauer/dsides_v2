@@ -63,7 +63,7 @@ final class ProjectFactory extends ModelFactory
     protected function getDefaults(): array
     {
         return [
-            'displayOrder' => self::faker()->randomNumber(),
+            'displayOrder' => self::faker()->randomNumber(2, false),
             'image' => 'placeholder.jpg',
             'isDisplayed' => self::faker()->boolean(),
             'name' => self::faker()->sentence(3),
