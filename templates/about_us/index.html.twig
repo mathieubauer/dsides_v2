@@ -1,14 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} {{ title }}{% endblock %}
+{% block title %}{{ parent() }} - {{ title }}{% endblock %}
 
 {% block body %}
+	<div class='container-fluid bg-bandeau-qsn'>Text</div>
   <div class='container mx-auto'>
-		<h1 class='text-center my-5'>{{ title }}</h1>
+		<h1 class='text-center my-5 py-5'>{{ title }}</h1>
 		<div class='d-flex flex-column align-items-center justify-content-center py-5'>
-			<div class='col-md-8 text_responsive'>
+			<div class='col-md-12 text_small_responsive'>
 			 {% if text.isPublished is defined and text.isPublished is not null %}
-         {{ text.content|raw }}
+				 <div class='row'>
+					 <div class='col-md-5 bg-img-qsn'></div>
+					 <div class='col-md-7 text_extra_small px-5'>
+						 {{ text.content|raw }}
+					 </div>
+				 </div>
        {% else %}
          <h2>Dans très peu de temps ici il y aura un text</h2>
        {% endif %}

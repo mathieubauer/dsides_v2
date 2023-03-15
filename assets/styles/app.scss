@@ -27,3 +27,21 @@
   max-width: 550px;
   padding: 15px;
 }
+
+.bg-img-qsn {
+  background-image: url("./../../public/uploads/images/clement-souchet-RYPWqUXDwuQ-unsplash.jpg");
+}
+
+.bg-bandeau-qsn {
+  background-image: url("./../../public/uploads/images/david-werbrouck-5GwLlb-_UYk-unsplash.jpg");
+  height: 300px;
+}
+
+.bg-bandeau-qsn,
+.bg-img-qsn{
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
