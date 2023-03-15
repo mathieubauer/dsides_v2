@@ -24,7 +24,7 @@ class AppFixtures extends Fixture
 		ClientFactory::createMany(6);
 		CategoryFactory::createMany(6);
 		ProjectFactory::new()
-			->many(10)
+			->many(22)
 			->create(function (){
 				return [
 					'client' => ClientFactory::random(),

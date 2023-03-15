@@ -26,6 +26,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
+		$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $routeBuilder = $this->urlGenerator->setController(ProjectCrudController::class);
         return $this->redirect($routeBuilder->generateUrl());
     }
