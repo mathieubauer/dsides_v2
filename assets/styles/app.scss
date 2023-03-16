@@ -30,18 +30,19 @@
 
 .bg-img-qsn {
   background-image: url("./../../public/uploads/images/clement-souchet-RYPWqUXDwuQ-unsplash.jpg");
+  background-position: center;
 }
 
 .bg-bandeau-qsn {
-  background-image: url("./../../public/uploads/images/david-werbrouck-5GwLlb-_UYk-unsplash.jpg");
-  height: 300px;
+  background-image: url("./../../public/img/lessiver.jpg");
+  background-position: bottom;
+  height: 450px;
 }
 
 .bg-bandeau-qsn,
 .bg-img-qsn{
   background-attachment: scroll;
-  background-position: center;
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   background-origin: border-box;
 }
