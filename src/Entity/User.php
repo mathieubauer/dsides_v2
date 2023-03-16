@@ -84,6 +84,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $job;
+
     public function __construct()
     {
         $this->projects = new ArrayCollection();
@@ -220,21 +225,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
 
 	public function getImageFile()
-	{
-		return $this->imageFile;
-	}
+         	{
+         		return $this->imageFile;
+         	}
 
 	/**
 	 * @param \Symfony\Component\HttpFoundation\File\File|null $imageFile
 	 */
 	public function setImageFile(File $imageFile = null): void
-	{
-		$this->imageFile = $imageFile;
-		if ($imageFile) {
-			$this->updatedAt = new \DateTime('now');
-		}
-
-	}
+         	{
+         		$this->imageFile = $imageFile;
+         		if ($imageFile) {
+         			$this->updatedAt = new \DateTime('now');
+         		}
+         
+         	}
 
 
 	/**
@@ -298,7 +303,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 	public function getFullname(): string
-	{
-		return $this->getFirstName().' '.$this->getLastName();
-	}
+         	{
+         		return $this->getFirstName().' '.$this->getLastName();
+         	}
+
+    public function getJob(): ?string
+    {
+        return $this->job;
+    }
+
+    public function setJob(?string $job): self
+    {
+        $this->job = $job;
+
+        return $this;
+    }
 }

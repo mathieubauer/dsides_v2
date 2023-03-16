@@ -18,8 +18,10 @@ class UserController extends AbstractController
 	#[Route('', name: 'app_teams_dsides')]
 	public function teamsDsides(): Response
 	{
+		$users = $this->em->getRepository(User::class)->findAll();
 		return $this->render('home/teams.html.twig', [
-			'title' => "L'équipe Dsides"
+			'title' => "L'équipe Dsides",
+			'teams' => $users
 		]);
 	}
 
