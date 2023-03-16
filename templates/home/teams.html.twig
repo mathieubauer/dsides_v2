@@ -2,23 +2,23 @@
 {% block title %}{{ parent() }} | {{ title }}{% endblock %}
 
 {% block body %}
+	<div class='container-fluid bg-team-qsn'></div>
 <div class='container'>
-	<h1>{{ title }}</h1>
+	<h1 class='text-center my-5 py-5'>{{ title }}</h1>
 	<section class="container mb-5 py-lg-3 py-xl-4 py-xxl-5 font_main">
-		<div class='row g-3 row-cols-1  row-cols-sm-1 row-cols-md-3 row-cols-xl-4 row-cols-xxl-4'>
-
+		<div class='row row-cols-3 row-cols-md-4 g-0 justify-content-center'>
 			<!-- Team classique --->
-			<div class="col">
-				<div class="card border-0 bg-transparent mx-auto" style="width: 12rem;">
-					<img src="{{ asset('uploads/images/portraitTest.jpg') }}" class="card-img-top rounded-top-0"
-					     alt="..." />
+			{% for team in teams %}
+			<div class="col pb-3 mx-1" style='width: 18rem'>
+				<div class="card border-0 bg-transparent">
+					<img src="{{ asset('uploads/images/'~ team.image) }}" class="card-img-top rounded-top-0" alt="..." />
 					<div class="card-body text-center">
-						<h6 class="card-title">Dupont Marie - 1</h6>
-						<p class="card-text">UX-Designer</p>
+						<h6 class="card-title">{{ team.fullname }}</h6>
+						<p class="card-text fw-bold">{{ team.job }}</p>
 					</div>
 				</div>
 			</div>
-
+		{% endfor %}
 		</div>
 	</section>
 </div>

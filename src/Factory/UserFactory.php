@@ -73,7 +73,8 @@ final class UserFactory extends ModelFactory
             'last_name' => self::faker()->lastName,
             'image' => 'portraitTest.jpg',
             'slug' => self::faker()->slug(1, false),
-            'content' => self::faker()->text(200)
+            'content' => self::faker()->text(200),
+            'job' => self::faker()->jobTitle
         ];
     }
 

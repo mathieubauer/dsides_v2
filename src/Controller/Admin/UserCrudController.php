@@ -48,7 +48,8 @@ class UserCrudController extends AbstractCrudController
                       ->onlyOnDetail(),
             TextEditorField::new('content'),
             AssociationField::new('projects')
-                     ->setFormTypeOptions(['choice_label' => 'name']),
+                     ->setFormTypeOptions(['choice_label' => 'name'])
+                     ->hideOnIndex(),
 
             TextField::new('password')
                      ->hideOnIndex()
@@ -67,6 +68,7 @@ class UserCrudController extends AbstractCrudController
 
             TextField::new('slug')
                      ->setPermission('ROLE_ADMIN'),
+            TextField::new('job', 'Job Title')
         ];
     }
 

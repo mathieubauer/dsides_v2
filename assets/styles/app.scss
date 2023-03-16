@@ -38,9 +38,16 @@
   background-position: bottom;
   height: 450px;
 }
+.bg-team-qsn{
+  background-image: url("./../../public/img/equipe_sport.png");
+  height: 450px;
+  background-position: center;
+}
 
 .bg-bandeau-qsn,
-.bg-img-qsn{
+.bg-img-qsn,
+.bg-team-qsn
+{
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-size: cover;
