@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Client;
 use App\Entity\Project;
 use App\Entity\User;
+use App\Factory\AboutUsFactory;
 use App\Factory\CategoryFactory;
 use App\Factory\ClientFactory;
 use App\Factory\ProjectFactory;
@@ -23,6 +24,7 @@ class AppFixtures extends Fixture
 	    UserFactory::createMany(10);
 		ClientFactory::createMany(6);
 		CategoryFactory::createMany(6);
+		AboutUsFactory::createOne();
 		ProjectFactory::new()
 			->many(22)
 			->create(function (){

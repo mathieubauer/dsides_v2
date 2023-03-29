@@ -12,4 +12,4 @@ if(modalId) {
 
 const content_shaw_project = document.getElementById('content_shaw_project');
 
-content_shaw_project.getElementsByTagName('div')[0].classList.add('f_text_serif','text_extra_small')
+content_shaw_project?.getElementsByTagName('div')[0].classList.add('f_text_serif','text_extra_small')

@@ -1,0 +1,13 @@
+# By default, the SEO generators services are not loaded if you don't configure them. The following default configuration
+# loads the services but they won't render anything.
+# See https://github.com/leogout/SeoBundle#configuration-reference to configure them.
+# See https://github.com/leogout/SeoBundle#setting-values-dynamically to use them directly in your controller.
+leogout_seo:
+    general:
+        title: Dsides@Work
+        description: Cabinet de conseil créatif, DSides accompagne les entreprises dans la transformation de leurs façons de travailler et d’apprendre. DSides aide les entreprises à identifier de nouvelles façons de collaborer.
+    basic:
+        keywords: créativité, idéation, design thinking, R&D, Open Innovation, RSE, leadership, gestion de projet, performance, organisation, planification, processus, coaching, ressources humaines, planification stratégique, analyse de marché, stratégie d'entreprise, plan de croissance, développement commercial, benchmarking, segmentation de marché, positionnement
+        canonical: https://dsides.net
+    og: ~
+    twitter: ~

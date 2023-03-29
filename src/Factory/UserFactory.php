@@ -74,7 +74,7 @@ final class UserFactory extends ModelFactory
             'image' => 'portraitTest.jpg',
             'slug' => self::faker()->slug(1, false),
             'content' => self::faker()->text(200),
-            'job' => self::faker()->jobTitle
+            'jobs' => self::faker()->jobTitle
         ];
     }
 
