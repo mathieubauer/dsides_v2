@@ -29,19 +29,20 @@
 }
 
 .bg-img-qsn {
-  background-image: url("./../../public/uploads/images/clement-souchet-RYPWqUXDwuQ-unsplash.jpg");
-  background-position: center;
+  transform: scaleX(-1);
+  background-image: url("./../../public/img/lunette_audience.jpg");
 }
 
 .bg-bandeau-qsn {
-  background-image: url("./../../public/img/lessiver.jpg");
-  background-position: bottom;
-  height: 450px;
+  background-image: url("./../../public/img/hurler_guepard.jpg");
 }
+
 .bg-team-qsn{
   background-image: url("./../../public/img/equipe_sport.png");
-  height: 450px;
-  background-position: center;
+}
+.bg-bandeau-qsn,
+.bg-team-qsn{
+  height: 550px;
 }
 
 .bg-bandeau-qsn,
@@ -50,6 +51,7 @@
 {
   background-attachment: scroll;
   background-repeat: no-repeat;
-  background-size: cover;
   background-origin: border-box;
+  background-position: center;
+  background-size: cover;
 }

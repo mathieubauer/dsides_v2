@@ -68,7 +68,7 @@ class UserCrudController extends AbstractCrudController
 
             TextField::new('slug')
                      ->setPermission('ROLE_ADMIN'),
-            TextField::new('job', 'Job Title')
+            TextField::new('jobs', 'Job Title')
         ];
     }
 
