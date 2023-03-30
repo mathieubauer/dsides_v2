@@ -14,6 +14,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
  * @Vich\Uploadable
+ * @ORM\Cache(usage="NONSTRICT_READ_WRITE", region="Project_cache_entity")
  */
 class Project
 {
@@ -113,7 +114,7 @@ class Project
     private $users;
 
     /**
-     * @ORM\OneToMany(targetEntity=Attachment::class, mappedBy="project",cascade={"persist"})
+     * @ORM\OneToMany(targetEntity=Attachment::class, mappedBy="project", orphanRemoval=true, cascade={"persist"})
      */
     private $attachments;
 

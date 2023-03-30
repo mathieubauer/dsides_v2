@@ -1,207 +1,104 @@
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Black";
     font-style: normal;
     font-weight: 900;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Black.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Black.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-BlackItalic";
     font-style: italic;
     font-weight: 900;
-    src: url('/public/fonts/JoannaNova/JoannaNova-BlackItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-BlackItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Bold";
     font-style: normal;
-    font-weight: 700;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Bold.otf');
+    font-weight: 600;
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Bold.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-BoldItalic";
     font-style: italic;
     font-weight: 700;
-    src: url('/public/fonts/JoannaNova/JoannaNova-BoldItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-BoldItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Book";
     font-style: normal;
     font-weight: 450;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Book.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Book.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-BookItalic";
     font-style: italic;
     font-weight: 450;
-    src: url('/public/fonts/JoannaNova/JoannaNova-BookItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-BookItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-ExtraBold";
     font-style: normal;
     font-weight: 800;
-    src: url('/public/fonts/JoannaNova/JoannaNova-ExtraBold.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-ExtraBold.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-ExtraBoldItalic";
     font-style: italic;
     font-weight: 800;
-    src: url('/public/fonts/JoannaNova/JoannaNova-ExtraBoldItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-ExtraBoldItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Light";
     font-style: normal;
     font-weight: 300;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Light.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Light.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-LightItalic";
     font-style: italic;
     font-weight: 300;
-    src: url('/public/fonts/JoannaNova/JoannaNova-LightItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-LightItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Medium";
     font-style: normal;
     font-weight: 500;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Medium.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Medium.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-MediumItalic";
     font-style: italic;
     font-weight: 500;
-    src: url('/public/fonts/JoannaNova/JoannaNova-MediumItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-MediumItalic.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Regular";
     font-style: normal;
     font-weight: 400;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Regular.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Regular.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-Thin";
     font-style: normal;
     font-weight: 250;
-    src: url('/public/fonts/JoannaNova/JoannaNova-Thin.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-Thin.otf');
 }
 
 @font-face {
-    font-family: "JoannaNova";
+    font-family: "JoannaNova-ThinItalic";
     font-style: italic;
     font-weight: 250;
-    src: url('/public/fonts/JoannaNova/JoannaNova-ThinItalic.otf');
+    src: url('./../../public/fonts/JoannaNova/JoannaNova-ThinItalic.otf');
 }
-
-// @font-face {
-//     font-family: "JoannaNova";
-//     font-style: normal;
-//     font-weight: xxx;
-//     src: url('/public/fonts/JoannaNova/JoannaNova-UltraBlack.otf');
-// }
-
-// @font-face {
-//     font-family: "JoannaNova";
-//     font-style: italic;
-//     font-weight: xxx;
-//     src: url('/public/fonts/JoannaNova/JoannaNova-UltraBlackItalic.otf');
-// }
-
-/*
-
-@font-face {
-    font-family: "JoannaNova-Black";
-    src: url('/public/fonts/JoannaNova/JoannaNova-Black.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-BlackItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-BlackItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNove-Bold';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Bold.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-BoldItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-BoldItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-Book';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Book.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-BookItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-BookItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-ExtraBold';
-    src: url('/public/fonts/JoannaNova/JoannaNova-ExtraBold.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-ExtraBoldItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-ExtraBoldItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-Italic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Light.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-LightItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-LightItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-Medium';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Medium.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-MediumItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-MediumItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-Regular';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Regular.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-Thin';
-    src: url('/public/fonts/JoannaNova/JoannaNova-Thin.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-ThinItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-ThinItalic.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-UltraBlack';
-    src: url('/public/fonts/JoannaNova/JoannaNova-UltraBlack.otf');
-}
-
-@font-face {
-    font-family: 'JoannaNova-UltraBlackItalic';
-    src: url('/public/fonts/JoannaNova/JoannaNova-UltraBlackItalic.otf');
-}
-
-*/

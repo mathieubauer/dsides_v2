@@ -1,29 +1,57 @@
-@import "_colors";
+@import "_colors.scss";
+@import "_fonts_JoannaNova.scss";
+@import "_fonts.scss";
+@import "_cards.scss";
+@import "_buttons.scss";
+@import "_layout.scss";
 
-// the ~ allows you to reference things in node_modules
-@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
 
-@import "_fonts_JoannaNova";
-@import "_fonts";
-@import "_cards";
-@import "_buttons";
-@import "_layout";
+.listFooter {
+  list-style-type: ">";
+}
 
 .list-group-item-action:hover {
   cursor: pointer;
-}
-.imgGrid {
-  margin:0 auto;
-  max-width: 900px;
-}
-
-.imgGrid-size,
-.imgGrid-item {
-  width: 30%;
-  margin-bottom: 4px;
 }
 
 .imgGrid-item:hover {
   cursor: pointer;
 }
 
+.form-sign {
+  max-width: 550px;
+  padding: 15px;
+}
+
+.bg-img-qsn {
+  transform: scaleX(-1);
+  background-image: url("./../../public/img/lunette_audience.jpg");
+}
+
+.bg-bandeau-qsn {
+  background-image: url("./../../public/img/hurler_guepard.jpg");
+}
+
+.bg-team-qsn{
+  background-image: url("./../../public/img/equipe_sport.png");
+}
+.bg-bandeau-qsn,
+.bg-team-qsn{
+  height: 550px;
+}
+
+.bg-bandeau-qsn,
+.bg-img-qsn,
+.bg-team-qsn
+{
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+}

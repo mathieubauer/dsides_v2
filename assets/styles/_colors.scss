@@ -1,6 +1,5 @@
 $default-card-bg-color: #FEE775;
 
-// $body-bg: #15202B;
 $body-bg: #F8F8FA;
 $ampli-color: #113f79;
 
@@ -14,6 +13,7 @@ $yellow:  #ffc107;
 $green:   #198754;
 $teal:    #20c997;
 $cyan:    #0dcaf0;
+$gray-200: #f1f2f6;
 
 //list-group
 $list-group-hover-bg: #15202B;
@@ -25,12 +25,12 @@ $theme-colors: (
     "info":       $cyan,
     "warning":    $yellow,
     "danger":     $red,
-
+	"gray-200":   $gray-200,
 	"primary": #083A7D,
-	"secondary": #343A41,
+	"secondary": #73777b,
+	"secondary_light": #b6b6b7,
 	"main": #1245F5,
     "accent": #FF5722,
-    // "accent": #F8BE45,
     "ampli": $ampli-color,
     "ampli_red": #D23F31,
     "twitter_bg":#15202B,

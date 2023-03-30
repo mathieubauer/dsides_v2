@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dsides Vidéo{% endblock %}
+
+{% block body %}
+<div class="container-fluid pt-5 pb-5 bg-black">
+  <div class="m-5 pt-5 pb-5">
+          {% for els in video.data[:1] %}
+                  <h1 class="text-center text-white text_small_responsive">{{ els.user.bio }}</h1>
+          {% endfor %}
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3">
+      {% for elements in video.data %}
+          <div class="col p-0">
+              <div class="card border-0 bg-transparent">
+                  <div class="ratio ratio-16x9">
+                      <iframe
+                          src="{{ elements.player_embed_url }}"
+                          width="{{ elements.pictures.sizes[2].width }}"
+                          height="{{ elements.pictures.sizes[2].width }}"
+                          webkitallowfullscreen
+                          mozallowfullscreen
+                          class="card-img-top rounded-0"
+                          allowfullscreen>
+                      </iframe>
+                  </div>
+                  <div class="card-body bg-black">
+                          <h5 class="lead text_small_responsive text-white font_main">{{ elements.name }}</h5>
+                  </div>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

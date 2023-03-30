@@ -9,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -60,13 +59,15 @@ class ProjectCrudController extends AbstractCrudController
                 ->hideOnIndex()
 	            ->hideOnDetail()
                 ->setHelp("Affichage seulement quand le projet est mis à la une"),
+
             ImageField::new('featuredImage', 'Image à la une')
                 ->setBasePath('/uploads/images/projects')
                 ->setUploadDir('public/uploads/images/projects')
                 ->onlyOnIndex()
                 ->setSortable(false),
+
             ImageField::new('featuredImage','Image à la une')
-				->setTemplatePath('/project/image.html.twig')
+				->setTemplatePath('admin/project/image.html.twig')
 				->setHelp("Affichage seulement quand le projet est mis à la une")
 				->onlyOnDetail(),
 
@@ -76,13 +77,15 @@ class ProjectCrudController extends AbstractCrudController
                 ->hideOnIndex()
 	            ->hideOnDetail()
                 ->setHelp("Affichage quand le projet n'est pas mis à la une"),
+
             ImageField::new('gridImage', 'Image mosaïque')
                 ->setBasePath('/uploads/images/projects')
                 ->setUploadDir('public/uploads/images/projects')
                 ->onlyOnIndex()
                 ->setSortable(false),
+
             ImageField::new('gridImage','Image mosaïque')
-                ->setTemplatePath('/project/image.html.twig')
+                ->setTemplatePath('admin/project/image.html.twig')
 	            ->setHelp("Affichage quand le projet n'est pas mis à la une")
                 ->onlyOnDetail(),
 
@@ -97,8 +100,9 @@ class ProjectCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images/projects')
                 ->onlyOnIndex()
                 ->setSortable(false),
+
             ImageField::new('image','Image par défaut')
-				->setTemplatePath('/project/image.html.twig')
+				->setTemplatePath('admin/project/image.html.twig')
 				->setHelp("Affichage en en-tête de la fiche")
 				->onlyOnDetail(),
 
@@ -108,8 +112,9 @@ class ProjectCrudController extends AbstractCrudController
                 ->setFormTypeOption('by_reference', false)
 	            ->setEntryIsComplex(true)
                 ->setEntryType(AttachmentType::class),
-            CollectionField::new('attachments', 'Ajouter')
-               ->setTemplatePath('/project/attachments/imagesCollection.html.twig')
+
+            CollectionField::new('attachments', 'Image Complémentaire')
+               ->setTemplatePath('admin/project/attachments/imagesCollection.html.twig')
                ->onlyOnDetail(),
 
             // AssociationField::new('users')->setFormTypeOptions(['choice_label' => 'email']),
@@ -152,7 +157,8 @@ class ProjectCrudController extends AbstractCrudController
 
 	public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-        $projects = $this->getDoctrine()->getRepository(Project::class)->findAll();
+        $projects = $entityManager->getRepository(Project::class)->findAll();
+
         // TODO: reorder avant
 
         $entityInstance

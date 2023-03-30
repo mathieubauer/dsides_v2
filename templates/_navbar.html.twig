@@ -1,23 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid mx-4 my-3 d-flex align-items-center">
-        <a class="navbar-brand" href="/">
+    <div class="container-fluid mx-4 my-3 align-items-center">
+        <a class="navbar-brand" href="{{ path('home') }}">
             <img src="{{ asset('img/logo_dsides_noir.png') }}" alt="" height="40">
         </a>
-        {% if app.request.attributes.get('id') %}
-                <a href="{{ path('home') }}" class="btn btn_material px-0 hidden_link">
-                    <i class="fas fa-chevron-left me-2"></i>
-                    <span>Retour</span>
+        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarBurger" aria-controls="navbarBurger" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarBurger">
+            <ul class="navbar-nav ms-auto text_small_responsive  mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-black" aria-current="page" href="{{ path('home') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{ path('app_about_us') }}">Qui sommes-nous ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{ path('app_teams_dsides') }}">L'équipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="{{ path('app_vimeo') }}">Vidéo Dsides</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black" href="https://lesept.org/">Le Sept</a>
+                </li>
+            </ul>
+            {% if app.request.attributes.get('id') %}
+                <a href="{{ path('home') }}" class=" ms-auto px-0 hidden_link">
+                    <i class="fa-solid fa-chevron-left me-1"></i>
+                    <span class='font_main text_extra_small'>Retour</span>
                 </a>
-        {% endif %}
+            {% endif %}
 
-        {% if is_granted('ROLE_ADMIN') %}
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/admin">
-                    <i class="fas fa-cog fa-lg"></i>
-                </a>
-            </li>
-        </ul>
-        {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <ul class="navbar-nav ms-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path('admin') }}">
+                            <i class="fas fa-cog fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
     </div>
 </nav>

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent() }} | {{ title }}{% endblock %}
+
+{% block body %}
+	<div class='container mx-auto mb-5'>
+		<h1 class='fw-bold h1 py-5 my-5 text-center'>{{ title }}</h1>
+		<div class='d-flex flex-column justify-content-center align-items-center'>
+			<!-- Qui sommes-nous  --->
+			<div class='col-md-8 col-sm-8'>
+					<h2 class='fw_300 h3'>{{ title }}</h2>
+			</div>
+			<!-- Utilisation des données --->
+			<div class='col-md-8 col-sm-8'>
+			{{ confidential.content|raw }}
+			</div>
+		</div>
+
+	</div>
+{% endblock %}
+
+
