@@ -4,7 +4,7 @@
 # See https://github.com/leogout/SeoBundle#setting-values-dynamically to use them directly in your controller.
 leogout_seo:
     general:
-        title: Dsides@Work
+        title: Dsides
         description: Cabinet de conseil créatif, DSides accompagne les entreprises dans la transformation de leurs façons de travailler et d’apprendre. DSides aide les entreprises à identifier de nouvelles façons de collaborer.
     basic:
         keywords: créativité, idéation, design thinking, R&D, Open Innovation, RSE, leadership, gestion de projet, performance, organisation, planification, processus, coaching, ressources humaines, planification stratégique, analyse de marché, stratégie d'entreprise, plan de croissance, développement commercial, benchmarking, segmentation de marché, positionnement

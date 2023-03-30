@@ -15,23 +15,21 @@
 
 						<div class="card border-0 bg-transparent">
 							<img src="{{ vich_uploader_asset(team, 'imageFile') }}" class="card-img-top rounded-top-0" alt="portrait de {{ team.fullname }}" />
-							<div class="card-img-overlay">
-						    <button
-								    class='bg-twitter_bg p-2 rounded-1 border-0 text-white mx-auto'
-								    type="button"
-								    data-bs-toggle="collapse"
-								    data-bs-target="#multiCollapse_{{ team.id }}"
-								    aria-expanded="false"
-								    aria-controls="multiCollapse_{{ team.id }}">En Savoir +</button>
-						  </div>
 							<div class="card-footer text-center bg-transparent border-0">
-								<div class="collapse multi-collapse py-2 bg-secondary_light" id="multiCollapse_{{ team.id }}">
+								<div class="collapse multi-collapse p-3 bg-gray-200 rounded rounded-1" id="multiCollapse_{{ team.id }}">
 									{% if team.content is empty or team.content is null %}
-										<p>Une peu de patience je vous dirais tout, enfin une petite partis</p>
+										<p>Un peu de patience, je vous dirais tout, enfin une petite partie de ma bio...</p>
 									{% else %}
 										{{ team.content }}
 									{% endif %}
 								</div>
+								<button
+										class='btn fs-6 p-1 m-1 border-0 text-black mx-auto'
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#multiCollapse_{{ team.id }}"
+										aria-expanded="false"
+										aria-controls="multiCollapse_{{ team.id }}">En Savoir +</button>
 								<h6 class="card-title">{{ team.fullname }}</h6>
 								<p class="card-text fw-bold">{{ team.jobs }}</p>
 							</div>
